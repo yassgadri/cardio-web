@@ -13,12 +13,22 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        heading: "hsl(var(--heading-text))",
+        body: "hsl(var(--body-text))",
+        topbar: {
+          DEFAULT: "hsl(var(--topbar-bg))",
+          foreground: "hsl(var(--topbar-foreground))",
+        },
+        section: "hsl(var(--section-bg))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

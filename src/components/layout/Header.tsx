@@ -10,7 +10,7 @@ const TopBar = () => (
     <div className="container-main flex items-center justify-between py-2">
       <div className="flex items-center gap-6">
         <a href={`tel:${contactInfo.fax.replace(/\s/g, "")}`} className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-          <Fax className="h-3.5 w-3.5" />
+          <Printer className="h-3.5 w-3.5" />
           <span>Fax: {contactInfo.fax}</span>
         </a>
         <span className="opacity-30">|</span>
