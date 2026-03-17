@@ -7,9 +7,10 @@ import Layout from '@/components/layout/Layout';
 import SectionHeading from '@/components/SectionHeading';
 import { serviceCategories } from '@/content/services';
 import { stats, contactInfo } from '@/content/navigation';
+import { withBasePath } from '@/lib/paths';
 
-const heroImg = '/assets/hero-cardio.jpg';
-const aboutImg = '/assets/about-cardio.jpg';
+const heroImg = withBasePath('/assets/hero-cardio.jpg');
+const aboutImg = withBasePath('/assets/about-cardio.jpg');
 const serviceIcons = [HeartPulse, Activity, Stethoscope];
 
 const fadeUp = {

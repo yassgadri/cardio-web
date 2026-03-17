@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 
-const repo = "cardio-next";
+const repo = process.env.NEXT_PUBLIC_BASE_PATH;
 
 const nextConfig = {
   output: "export",
-  basePath: `/${repo}`,
-  assetPrefix: `/${repo}/`,
+  basePath: repo,
+  assetPrefix: repo,
   images: {
     unoptimized: true,
   },

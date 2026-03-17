@@ -6,8 +6,9 @@ import { usePathname } from 'next/navigation';
 import { Phone, Printer, Mail, Menu, X, ChevronDown, Facebook, Youtube, Linkedin } from 'lucide-react';
 import { navigation, contactInfo, socialLinks } from '@/content/navigation';
 import type { NavItem } from '@/content/navigation';
+import { withBasePath } from '@/lib/paths';
 
-const logoImg = '/assets/logo-cardio.png';
+const logoImg = withBasePath('/assets/logo-cardio.png');
 
 const TopBar = () => (
   <div className="bg-topbar text-topbar-foreground text-sm hidden md:block">
