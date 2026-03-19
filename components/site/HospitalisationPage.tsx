@@ -23,18 +23,24 @@ const amenities = [
 ];
 
 const gallery = [
-  { src: withBasePath("/assets/uploads/1000002588.jpg"), alt: "Chambre du service de cardiologie" },
-  { src: withBasePath("/assets/uploads/1000002600.jpg"), alt: "Chambre d’hospitalisation" },
   {
+    src: withBasePath("/assets/uploads/1000002588.jpg"),
+    alt: "Unité d’hospitalisation ambulatoire",
+  },
+  {
+    src: withBasePath("/assets/uploads/1000002600.jpg"),
+    alt: "Chambre d’hospitalisation conventionnelle",
+  },
+  /*{
     src: withBasePath("/assets/uploads/1000002606.jpg"),
     alt: "Unité d’hospitalisation cardiologique",
-  },
+  },*/
   { src: withBasePath("/assets/uploads/1000002590.jpg"), alt: "Préparation des soins" },
-  { src: withBasePath("/assets/uploads/1000002594.jpg"), alt: "Poste de soins" },
+  /*{ src: withBasePath("/assets/uploads/1000002594.jpg"), alt: "Poste de soins" },
   {
     src: withBasePath("/assets/uploads/1000002612.jpg"),
     alt: "Salle de cardiologie interventionnelle",
-  },
+  },*/
 ];
 
 export default function HospitalisationPage() {
@@ -57,9 +63,24 @@ export default function HospitalisationPage() {
             <h2 className="mb-4 text-2xl md:text-3xl">Hospitalisation</h2>
             <div className="mb-6 h-1 w-16 rounded-full bg-primary" />
             <p className="mb-8 text-body leading-relaxed">
-              Lorsque votre prise en charge nécessite une surveillance, un geste interventionnel ou
-              un séjour médicalisé, l’hospitalisation est organisée dans un cadre structuré visant à
-              assurer sécurité, continuité des soins et confort au patient.
+              <p>
+                Lorsque votre état nécessite une surveillance, un examen spécialisé ou un geste
+                interventionnel, une hospitalisation peut être proposée.
+              </p>
+              <p>
+                Celle-ci peut se faire en ambulatoire (sur la journée) ou en hospitalisation
+                conventionnelle avec séjour.
+              </p>
+              <p>
+                Tout est organisé pour assurer votre sécurité, la continuité des soins et votre
+                confort tout au long de votre prise en charge.
+              </p>
+            </p>
+            <h3 className="mb-4 text-lg font-semibold">Capacité d'accueil</h3>
+            <p className="mb-8 text-body leading-relaxed">
+              35 lits de cardiologie (dont 8 lits de soins intensifs de cardiologie, 6 lits
+              d'ambulatoire dans un espace dédié, 12 lits en unité de surveillance continue et 9
+              lits de cardiologie conventionnelle).
             </p>
           </motion.div>
 
@@ -98,40 +119,19 @@ export default function HospitalisationPage() {
           </motion.div>
 
           <motion.div
-            className="mt-6 medical-card"
-            {...fadeUp}
-            transition={{ ...fadeUp.transition, delay: 0.1 }}
-          >
-            <h3 className="mb-4 text-lg font-semibold">
-              Le secrétariat du service hospitalisation
-            </h3>
-            <div className="flex flex-wrap gap-8 text-sm">
-              <div>
-                <p className="mb-1 font-semibold text-heading">Téléphone</p>
-                <a
-                  href={`tel:${contactInfo.phoneHospitalisation.replace(/\s/g, "")}`}
-                  className="flex items-center gap-2 font-medium text-primary"
-                >
-                  <Phone className="h-4 w-4" /> {contactInfo.phoneHospitalisation}
-                </a>
-              </div>
-              <div>
-                <p className="mb-1 font-semibold text-heading">Fax</p>
-                <p className="text-body">{contactInfo.faxHospitalisation}</p>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
             className="mt-10"
             {...fadeUp}
             transition={{ ...fadeUp.transition, delay: 0.15 }}
           >
             <h3 className="mb-6 text-lg font-semibold text-heading">Le service en images</h3>
+
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
               {gallery.map((item) => (
                 <div key={item.src} className="overflow-hidden rounded-xl bg-card shadow-sm">
                   <img src={item.src} alt={item.alt} className="h-64 w-full object-cover" />
+
+                  {/* Sous-titre */}
+                  <div className="px-4 py-3 text-sm text-body text-center">{item.alt}</div>
                 </div>
               ))}
             </div>

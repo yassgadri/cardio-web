@@ -26,13 +26,12 @@ export const navigation: NavItem[] = [
       { label: "Accès", href: "/acces" },
     ],
   },
-  { label: "Contact", href: "/contact" },
 ];
 
 export const contactInfo = {
   phone: "+262 2 62 48 21 22",
   fax: "+262 2 62 48 24 54",
-  email: "Sec.cscardio.csc@clinifutur.net",
+  email: "sec.cscardio.csc@clinifutur.net",
   address: "Clinique Sainte-Clotilde, 127 route du Bois de Nèfles",
   city: "97490 Sainte-Clotilde, La Réunion",
   phoneHospitalisation: "+262 2 62 48 20 56",

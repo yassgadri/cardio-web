@@ -1,21 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  HeartPulse,
-  Activity,
-  Stethoscope,
-  Phone,
-  MapPin,
-  Users,
-  ShieldCheck,
-} from "lucide-react";
+import { MapPin, HeartPulse, Stethoscope, ShieldCheck } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageBanner from "@/components/layout/PageBanner";
 import SectionHeading from "@/components/SectionHeading";
-import { contactInfo } from "@/content/navigation";
 import { withBasePath } from "@/lib/paths";
 
 const aboutImg = withBasePath("/assets/about-cardio.jpg");
@@ -24,7 +13,7 @@ const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.55, ease: "easeOut" },
+  transition: { duration: 0.55, ease: "easeOut" as const },
 };
 
 const highlights = [
@@ -116,17 +105,14 @@ export default function AboutPage() {
         <div className="container-main">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
             <motion.div {...fadeUp} className="lg:col-span-5">
-              <SectionHeading
-                align="left"
-                title="Le service de cardiologie de la Clinique Sainte-Clotilde"
-              />
+              <SectionHeading title="Le service de cardiologie de la Clinique Sainte-Clotilde" />
 
               <p className="mt-6 text-base leading-8 text-body">
-                Depuis 1991, l’équipe de cardiologues de la Clinique Sainte-Clotilde, fondée par le
-                Dr Christophe Pouillot, a pionniéré la cardiologie interventionnelle sur l'île de la
-                Réunion, réalisant des premières majeures telles que la première angioplastie
-                coronaire en 1991, le premier stent intra-coronaire en 1993 ainsi que la première
-                dilatation des valves cardiaques.
+                Depuis 1991, le service de cardiologie de la Clinique Sainte-Clotilde, fondé par le
+                Dr Christophe Pouillot, est pionnier dans le domaine de la cardiologie
+                interventionnelle sur l’île de La Réunion. Il a réalisé des premières majeures,
+                telles que la première angioplastie coronaire en 1991, le premier stent
+                intracoronaire en 1993, ainsi que la première dilatation de valve cardiaque.
               </p>
             </motion.div>
 
@@ -135,14 +121,13 @@ export default function AboutPage() {
               transition={{ ...fadeUp.transition, delay: 0.1 }}
               className="lg:col-span-7"
             >
-              <div className="grid gap-5 md:grid-cols-2 items-stretch">
-                {/* Histoire + Équipe */}
-                <div className="rounded-2xl border border-border bg-white p-6 shadow-sm space-y-6 h-full flex flex-col">
+              <div className="grid items-stretch gap-5 md:grid-cols-2">
+                <div className="flex h-full flex-col space-y-6 rounded-2xl border border-border bg-white p-6 shadow-sm">
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-wider text-primary">
                       Histoire
                     </p>
-                    <p className="mt-3 text-body leading-7">
+                    <p className="mt-3 leading-7 text-body">
                       Depuis plus de trois décennies, le service développe une expertise reconnue en
                       cardiologie diagnostique et interventionnelle, au service des patients de
                       l’île.
@@ -150,7 +135,7 @@ export default function AboutPage() {
                   </div>
 
                   <div>
-                    <p className="mt-4 text-body leading-7">
+                    <p className="leading-7 text-body">
                       Le service s’appuie sur des cardiologues interventionnels expérimentés,
                       soutenus par une équipe infirmière et technique formée aux prises en charge
                       spécialisées.
@@ -158,19 +143,18 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* Activité */}
-                <div className="rounded-2xl border border-border bg-white p-6 shadow-sm h-full flex flex-col justify-start">
+                <div className="flex h-full flex-col justify-start rounded-2xl border border-border bg-white p-6 shadow-sm">
                   <p className="text-sm font-semibold uppercase tracking-wider text-primary">
                     Activité
                   </p>
 
                   <div className="mt-4 space-y-4">
-                    <p className="text-body leading-7">
+                    <p className="leading-7 text-body">
                       Plus de <strong>80 000 examens</strong> ont été réalisés au fil des années, et
                       plus de <strong>3 000 procédures</strong> sont effectuées chaque année.
                     </p>
 
-                    <p className="text-body leading-7">
+                    <p className="leading-7 text-body">
                       En 2014, le service a réalisé le premier <strong>TAVI</strong> de l’océan
                       Indien, illustrant une dynamique d’innovation continue au bénéfice des
                       patients.

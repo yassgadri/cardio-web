@@ -84,7 +84,7 @@ export default function Header() {
             href="/contact"
             className="inline-flex items-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
           >
-            Prendre RDV
+            Contact
           </Link>
         </div>
 
@@ -151,7 +151,7 @@ export default function Header() {
               className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
               onClick={() => setOpen(false)}
             >
-              Prendre RDV
+              Contact
             </Link>
           </div>
         </div>

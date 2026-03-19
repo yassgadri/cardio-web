@@ -35,9 +35,12 @@ export default function ConsultationPage() {
             <div className="mb-6 h-1 w-16 rounded-full bg-primary" />
             <p className="mb-8 text-body leading-relaxed">
               La consultation permet une première évaluation cardiologique, un suivi spécialisé ou
-              l’interprétation d’examens déjà réalisés. Elle sert également à orienter la prise en
-              charge, programmer si besoin des examens complémentaires et expliquer la suite du
+              l’interprétation d’examens déjà réalisés. Elle permet également d’orienter la prise en
+              charge, de programmer si besoin des examens complémentaires et d’expliquer la suite du
               parcours.
+            </p>
+            <p className="mb-8 text-body leading-relaxed">
+              Les consultations se déroulent dans le bâtiment B, au 2ᵉ étage.
             </p>
           </motion.div>
 
@@ -113,7 +116,7 @@ export default function ConsultationPage() {
               href="/contact"
               className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Service de cardiologie — Contactez-nous
+              Consultation de cardiologie — Contactez-nous
             </Link>
           </motion.div>
         </div>

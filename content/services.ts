@@ -90,7 +90,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "cardiologie-interventionnelle",
     title: "Cardiologie interventionnelle",
     description:
-      "Prise en charge diagnostique et thérapeutique par techniques mini-invasives pour explorer ou traiter certaines pathologies cardiovasculaires.",
+      "Prise en charge diagnostique et thérapeutique par techniques mini-invasives pour explorer ou traiter certaines pathologies cardiovasculaires. Le service dispose de deux salles de cathétérisme.",
     procedures: [
       {
         title: "Coronarographie",

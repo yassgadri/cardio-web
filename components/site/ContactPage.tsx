@@ -22,87 +22,105 @@ export default function ContactPage() {
       />
       <section className="section-padding">
         <div className="container-main max-w-5xl">
-          <motion.div className="mb-12 text-center" {...fadeUp}>
-            <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">
+          <motion.div className="mb-10 text-center" {...fadeUp}>
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
               Entrer en contact
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl">Nous joindre simplement</h2>
-            <p className="mt-4 text-body leading-relaxed">
+            <p className="mx-auto mt-3 max-w-2xl text-body leading-relaxed">
               Pour une prise de rendez-vous, une information sur le service ou une question liée à
               l’hospitalisation, vous pouvez contacter le secrétariat du service de cardiologie.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <motion.div className="medical-card text-center" {...fadeUp}>
-              <Phone className="h-8 w-8 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-3">Téléphones utiles</h3>
-              <div className="space-y-2">
+
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <motion.div className="medical-card px-5 py-6 text-center" {...fadeUp}>
+              <Phone className="mx-auto mb-3 h-7 w-7 text-primary" />
+              <h3 className="mb-2 text-lg font-semibold">Consultation</h3>
+              <div className="space-y-2 text-sm md:text-base">
                 <a
                   href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
-                  className="block text-primary font-medium"
+                  className="block font-medium text-primary hover:underline"
                 >
-                  Consultation : {contactInfo.phone}
-                </a>
-                <a
-                  href={`tel:${contactInfo.phoneHospitalisation.replace(/\s/g, "")}`}
-                  className="block text-primary font-medium"
-                >
-                  Hospitalisation : {contactInfo.phoneHospitalisation}
+                  {contactInfo.phone}
                 </a>
               </div>
             </motion.div>
+
             <motion.div
-              className="medical-card text-center"
+              className="medical-card px-5 py-6 text-center"
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.1 }}
             >
-              <MapPin className="h-8 w-8 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-3">Adresse</h3>
-              <p className="text-body">
-                {contactInfo.address}
-                <br />
-                {contactInfo.city}
-              </p>
+              <Phone className="mx-auto mb-3 h-7 w-7 text-primary" />
+              <h3 className="mb-2 text-lg font-semibold">Hospitalisation</h3>
+              <a
+                href={`tel:${contactInfo.phoneHospitalisation.replace(/\s/g, "")}`}
+                className="block font-medium text-primary hover:underline"
+              >
+                {contactInfo.phoneHospitalisation}
+              </a>
             </motion.div>
+
             <motion.div
-              className="medical-card text-center"
+              className="medical-card px-5 py-6 text-center"
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.2 }}
             >
-              <Mail className="h-8 w-8 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-3">Email</h3>
+              <Mail className="mx-auto mb-3 h-7 w-7 text-primary" />
+              <h3 className="mb-2 text-lg font-semibold">Email</h3>
               <a
                 href={`mailto:${contactInfo.email}`}
-                className="text-primary font-medium break-all"
+                className="text-sm font-medium text-primary hover:underline md:text-[15px] whitespace-nowrap"
               >
                 {contactInfo.email}
               </a>
             </motion.div>
           </div>
-          <motion.div className="medical-card mt-8" {...fadeUp}>
-            <div className="flex items-start gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+
+          <motion.div className="medical-card mt-6 px-5 py-6" {...fadeUp}>
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                 <FileText className="h-5 w-5 text-primary" />
               </div>
-              <div className="text-sm text-body leading-relaxed">
+              <div className="text-sm leading-relaxed text-body md:text-base">
                 <p className="mb-2 font-semibold text-heading">Informations complémentaires</p>
                 <p>Fax consultation : {contactInfo.fax}</p>
                 <p>Fax hospitalisation : {contactInfo.faxHospitalisation}</p>
               </div>
             </div>
           </motion.div>
-          <motion.div className="medical-card mt-8 text-center" {...fadeUp}>
-            <div className="aspect-[16/7] rounded-lg bg-section flex items-center justify-center px-6">
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${contactInfo.address}, ${contactInfo.city}`)}`}
-                target="_blank"
-                rel="noreferrer"
-                className="text-primary font-medium hover:underline"
-              >
-                Voir sur Google Maps
-                <br />
-                {contactInfo.address}, {contactInfo.city}
-              </a>
+
+          <motion.div className="medical-card mt-6 px-5 py-6 text-center" {...fadeUp}>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                `${contactInfo.address}, ${contactInfo.city}`,
+              )}`}
+              target="_blank"
+              rel="noreferrer"
+              className="mb-4 inline-block text-sm font-medium text-primary hover:underline md:text-base"
+            >
+              Voir sur Google Maps — {contactInfo.address}, {contactInfo.city}
+            </a>
+
+            <div className="relative aspect-[16/7] overflow-hidden rounded-lg">
+              <iframe
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                src={`https://www.google.com/maps?q=${encodeURIComponent(
+                  `${contactInfo.address}, ${contactInfo.city}`,
+                )}&output=embed`}
+              />
+
+              <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full">
+                <div className="relative">
+                  <span className="absolute inline-flex h-6 w-6 rounded-full bg-primary opacity-75 animate-ping"></span>
+                  <span className="relative inline-flex h-6 w-6 rounded-full border-2 border-white bg-primary shadow-lg"></span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
