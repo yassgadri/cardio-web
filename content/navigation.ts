@@ -5,48 +5,49 @@ export interface NavItem {
 }
 
 export const navigation: NavItem[] = [
-  { label: "Accueil", href: "/" },
-  { label: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
+  { label: 'Accueil', href: '/' },
   {
-    label: "Spécialités",
-    href: "#",
+    label: 'Spécialités',
+    href: '/specialites',
     children: [
-      { label: "Cardiopathies ischémiques", href: "/cardiopathies-ischemiques" },
-      { label: "Cardiopathies rythmiques", href: "/cardiopathies-rythmiques" },
-      { label: "Cardiopathies valvulaires", href: "/cardiopathies-valvulaires" },
+      { label: 'Explorations non invasives', href: '/explorations-non-invasives' },
+      { label: 'Cardiologie interventionnelle', href: '/cardiologie-interventionnelle' },
+      { label: 'Rythmologie', href: '/rythmologie' },
     ],
   },
+  { label: 'Examens', href: '/examens' },
   {
-    label: "Informations",
-    href: "#",
+    label: 'Parcours patient',
+    href: '/parcours-patient',
     children: [
-      { label: "Consultation", href: "/consultation" },
-      { label: "Hospitalisation", href: "/hospitalisation" },
+      { label: 'Consultation', href: '/consultation' },
+      { label: 'Hospitalisation', href: '/hospitalisation' },
+      { label: 'Préparer ma visite', href: '/preparer-ma-visite' },
+      { label: 'Accès', href: '/acces' },
     ],
   },
-  { label: "Médecins & Professionnels", href: "/medecins-professionnels" },
-  { label: "Contact", href: "/contact" },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export const contactInfo = {
-  phone: "+262 2 62 48 21 22",
-  fax: "+262 2 62 48 24 54",
-  email: "Sec.cscardio.csc@clinifutur.net",
-  address: "127, route du Bois de Nèfles",
-  city: "97490 SAINTE-CLOTILDE",
-  phoneHospitalisation: "+262 2 62 48 20 56",
-  faxHospitalisation: "+262 2 62 48 20 85",
+  phone: '+262 2 62 48 21 22',
+  fax: '+262 2 62 48 24 54',
+  email: 'Sec.cscardio.csc@clinifutur.net',
+  address: '127, route du Bois de Nèfles',
+  city: '97490 SAINTE-CLOTILDE',
+  phoneHospitalisation: '+262 2 62 48 20 56',
+  faxHospitalisation: '+262 2 62 48 20 85',
 };
 
 export const socialLinks = {
-  facebook: "#",
-  youtube: "#",
-  linkedin: "#",
+  facebook: '#',
+  youtube: '#',
+  linkedin: '#',
 };
 
 export const stats = [
-  { value: "8+", label: "Médecins professionnels" },
-  { value: "2+", label: "Laboratoire numérique" },
-  { value: "30+", label: "Années d'expérience" },
-  { value: "12+", label: "Infirmiers" },
+  { value: '3', label: 'Axes de prise en charge' },
+  { value: '5', label: 'Examens principaux' },
+  { value: '30+', label: "Années d'expérience" },
+  { value: '4', label: 'Rubriques patient' },
 ];

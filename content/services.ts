@@ -11,141 +11,213 @@ export interface Procedure {
   process: string;
 }
 
+export interface ExamItem {
+  slug: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  process: string;
+  preparation: string;
+  duration: string;
+}
+
 export const serviceCategories: ServiceCategory[] = [
   {
-    slug: "cardiopathies-ischemiques",
-    title: "Cardiopathies ischémiques",
+    slug: 'explorations-non-invasives',
+    title: 'Explorations non invasives',
     description:
-      "Les cardiopathies ischémiques sont des maladies cardiaques causées par un apport sanguin insuffisant au muscle cardiaque en raison d'une obstruction des artères coronaires.",
+      'Examens cardiologiques permettant d’évaluer le cœur sans geste invasif, afin de guider le diagnostic, le suivi et la stratégie thérapeutique.',
     procedures: [
       {
-        title: "Echocardiographie de stress",
+        title: 'Électrocardiogramme (ECG)',
         description:
-          "L'échocardiographie de stress est une méthode non invasive qui évalue la fonction cardiaque sous stress physique, permettant de détecter d'éventuelles anomalies coronariennes. Elle utilise des images échographiques pendant l'effort ou après l'administration de médicaments pour accélérer le rythme cardiaque. Cela aide les médecins à diagnostiquer les maladies coronariennes et autres problèmes cardiaques chez les patients présentant des symptômes tels que des douleurs thoraciques ou une dyspnée.",
+          'Examen simple et rapide qui enregistre l’activité électrique du cœur afin d’analyser le rythme cardiaque et d’orienter le diagnostic.',
         process:
-          "Au cours de l'examen, les patients pédalent sur un vélo stationnaire pour effectuer un effort physique. Des électrodes autocollantes sont placées sur le thorax pour surveiller la pression artérielle, tandis que des médicaments peuvent être administrés par voie intraveineuse selon les besoins. La durée de l'examen varie généralement entre 30 et 45 minutes.",
+          'Des électrodes sont placées sur le thorax, les poignets et les chevilles. L’examen est indolore et dure généralement quelques minutes.',
+      },
+      {
+        title: 'Échocardiographie Doppler transthoracique (ETT)',
+        description:
+          'Technique utilisant des ultrasons pour examiner les cavités cardiaques, la fonction du muscle cardiaque et le fonctionnement des valves.',
+        process:
+          'Un gel est appliqué sur la poitrine puis la sonde est déplacée sur la peau afin d’obtenir les images du cœur. La durée moyenne est de 15 à 30 minutes.',
       },
       {
         title: "Épreuve d'effort",
         description:
-          "Les épreuves d'effort, y compris les épreuves cardio-respiratoires avec mesure du VO2 max, évaluent le fonctionnement cardiaque pendant l'exercice, identifiant d'éventuelles anomalies du rythme, de la pression artérielle et de la circulation coronaire, et surveillant l'efficacité des traitements cardiaques.",
+          'Examen réalisé pendant un effort progressif pour analyser la réponse du cœur, du rythme et de la tension artérielle à l’exercice.',
         process:
-          "L'épreuve d'effort, d'une durée de 15 à 30 minutes, se déroule sur un tapis roulant ou un vélo stationnaire. Elle implique l'application d'électrodes autocollantes sur le thorax et l'utilisation d'un masque pour évaluer la réponse respiratoire. Il est recommandé d'apporter des vêtements de sport et une serviette.",
+          'L’examen se déroule sur vélo ou tapis selon les indications. Des électrodes sont posées sur le thorax et l’effort est surveillé en continu.',
       },
       {
-        title: "Échographie trans-œsophagienne (ETO)",
+        title: 'Échocardiographie de stress',
         description:
-          "L'échographie trans-œsophagienne (ETO) vise à visualiser des structures spécifiques du cœur telles que la valve mitrale, l'oreillette gauche et l'auricule gauche. Cette méthode est privilégiée pour détecter des végétations, des caillots intracardiaques, des anomalies de continence des valves cardiaques.",
+          'Méthode non invasive évaluant la fonction cardiaque sous stress physique ou médicamenteux afin de rechercher certaines anomalies coronariennes.',
         process:
-          "Cet examen, effectué au sein du bloc opératoire de cardiologie, a une durée de 5 à 10 minutes et est réalisé sous anesthésie locale ou brève anesthésie générale.",
+          'Des images échographiques sont réalisées au repos puis pendant l’effort ou après administration d’un traitement stimulant le cœur.',
       },
       {
-        title: "Coronarographie",
+        title: 'Holter ECG',
         description:
-          "Après avoir administré une anesthésie locale, le médecin insère un petit tube dans l'artère fémorale droite ou dans l'artère radiale pour permettre le passage du cathéter. Ensuite, le cathéter est guidé vers les artères coronaires sous surveillance visuelle sur un écran.",
+          'Enregistrement continu de l’électrocardiogramme sur 24 à 48 heures afin de repérer les variations du rythme cardiaque dans la vie quotidienne.',
         process:
-          "La durée de l'examen varie de 15 à 30 minutes, et il requiert une hospitalisation de 24 heures. Une consultation préopératoire avec un anesthésiste est indispensable quelques jours avant l'intervention.",
+          'Des électrodes autocollantes sont reliées à un boîtier portable porté à la ceinture ou en bandoulière pendant 24 à 48 heures.',
       },
       {
-        title: "Dilatation coronaire ou angioplastie transluminale",
+        title: 'Holter tensionnel',
         description:
-          "L'angioplastie transluminale coronaire vise à rétablir un flux sanguin normal dans les artères coronaires rétrécies ou obstruées par l'athérosclérose. Cette procédure implique le passage d'un guide métallique très mince à travers le rétrécissement.",
+          'Mesure répétée de la tension artérielle sur 24 heures pour mieux évaluer son évolution dans les conditions habituelles de la journée et de la nuit.',
         process:
-          "L'angioplastie est un examen peu douloureux qui requiert une anesthésie locale. Sa durée peut varier de 15 minutes à plus d'une heure en fonction du nombre d'artères coronaires à traiter. La période d'hospitalisation peut s'étendre de 1 à 3 jours.",
+          'Un brassard relié à un appareil portable réalise automatiquement des mesures régulières tout au long de la journée et pendant le sommeil.',
+      },
+      {
+        title: 'Échographie trans-œsophagienne (ETO)',
+        description:
+          'Examen ciblé permettant de visualiser avec précision certaines structures cardiaques comme les valves, l’oreillette gauche ou la présence de caillots.',
+        process:
+          'Réalisé au sein du bloc opératoire de cardiologie, l’examen dure généralement 5 à 10 minutes sous anesthésie locale ou brève anesthésie générale.',
       },
     ],
   },
   {
-    slug: "cardiopathies-rythmiques",
-    title: "Cardiopathies rythmiques",
+    slug: 'cardiologie-interventionnelle',
+    title: 'Cardiologie interventionnelle',
     description:
-      "Les cardiopathies rythmiques désignent des troubles du rythme cardiaque qui entraînent des battements du cœur irréguliers, perturbant ainsi son fonctionnement normal et optimal.",
+      'Prise en charge diagnostique et thérapeutique par techniques mini-invasives pour explorer ou traiter certaines pathologies cardiovasculaires.',
     procedures: [
       {
-        title: "Explorations électro-physiologiques",
+        title: 'Coronarographie',
         description:
-          "Les explorations électrophysiologiques sont des examens destinés à confirmer un diagnostic de troubles du rythme cardiaque. Elles consistent à étudier les tissus musculaires du cœur et à enregistrer leur activité électrique à différents endroits.",
+          'Examen permettant de visualiser les artères coronaires afin d’identifier un rétrécissement ou une obstruction du flux sanguin.',
         process:
-          "L'examen consiste à introduire une sonde par la veine fémorale sous anesthésie locale, dirigée vers le cœur à l'aide d'un appareil de radiographie, nécessitant une hospitalisation de quelques heures, d'une durée moyenne de 30 minutes à 1 heure.",
+          'Sous anesthésie locale, un cathéter est introduit par l’artère radiale ou fémorale puis guidé jusqu’aux coronaires. Une hospitalisation courte est habituellement nécessaire.',
       },
       {
-        title: "Enregistrement continu de l'électrocardiogramme",
+        title: 'Angioplastie coronaire',
         description:
-          "Le suivi continu de l'électrocardiogramme sur 24 à 48 heures se fait à l'aide du moniteur Holter, un dispositif portable. Il permet de repérer les variations du rythme cardiaque nécessitant un traitement.",
+          'Procédure visant à rétablir un flux sanguin normal dans une artère coronaire rétrécie ou obstruée, parfois avec mise en place d’un stent.',
         process:
-          "Des électrodes autocollantes sont placées sur le thorax du patient, reliées à un moniteur portable à porter à la ceinture ou en bandoulière, tandis que le patient note ses activités et toute douleur ou accélération du rythme cardiaque ressentie.",
+          'L’intervention est réalisée sous anesthésie locale. Sa durée dépend du geste à effectuer et peut nécessiter une hospitalisation de 1 à 3 jours.',
       },
       {
-        title: "Cardioversion",
+        title: 'Cathétérisme cardiaque hémodynamique',
         description:
-          "La cardioversion, pratique médicale visant à rétablir un rythme cardiaque normal en appliquant un bref choc électrique dans le cœur, est effectuée sur des patients atteints d'arythmie, notamment la fibrillation auriculaire.",
+          'Technique d’exploration permettant d’évaluer les pressions dans les cavités cardiaques et le fonctionnement de la circulation sanguine.',
         process:
-          "Une sonde est introduite par la veine fémorale après l'administration d'une anesthésie locale. Ensuite, elle est dirigée vers le cœur à l'aide d'un équipement de radiographie. Cette intervention peut être réalisée en ambulatoire.",
+          'Une sonde souple est introduite dans une artère ou une veine afin d’accéder au cœur. L’examen peut durer de 45 minutes à plusieurs heures selon le bilan réalisé.',
       },
       {
-        title: "Ablation par radiofréquence ou cryothérapie",
+        title: 'Implantation de valve aortique percutanée (TAVI)',
         description:
-          "L'ablation par radiofréquence ou cryothérapie est une intervention qui vise à traiter les troubles du rythme cardiaque en détruisant les anomalies cardiaques spécifiques.",
+          'Procédure percutanée utilisée dans certaines indications pour traiter un rétrécissement aortique symptomatique.',
         process:
-          "L'examen d'ablation par voie endovasculaire, réalisée sous anesthésie locale ou générale, implique l'introduction de sondes par la veine fémorale, avec une durée de préparation d'environ 2 heures et une durée d'examen de 30 minutes à 3 heures.",
+          'La valve est acheminée par cathéter puis implantée sous contrôle médical spécialisé. La procédure nécessite une hospitalisation adaptée.',
+      },
+      {
+        title: 'Valvuloplastie aortique',
+        description:
+          'Technique réservée à certaines situations pour améliorer l’ouverture d’une valve aortique rétrécie lorsque l’indication le justifie.',
+        process:
+          'Après anesthésie locale, un ballonnet est introduit par cathéter puis gonflé rapidement au niveau de la valve aortique.',
+      },
+    ],
+  },
+  {
+    slug: 'rythmologie',
+    title: 'Rythmologie',
+    description:
+      'Évaluation et traitement des troubles du rythme cardiaque, des palpitations et des anomalies de conduction nécessitant un suivi spécialisé.',
+    procedures: [
+      {
+        title: 'Explorations électrophysiologiques',
+        description:
+          'Examens destinés à confirmer un diagnostic de trouble du rythme en étudiant l’activité électrique du cœur à différents endroits.',
+        process:
+          'Une sonde est introduite par voie veineuse sous anesthésie locale puis guidée vers le cœur à l’aide d’un dispositif de radiographie.',
+      },
+      {
+        title: 'Cardioversion',
+        description:
+          'Acte médical visant à rétablir un rythme cardiaque normal chez certains patients présentant une arythmie, notamment la fibrillation auriculaire.',
+        process:
+          'La procédure est réalisée en milieu spécialisé selon le protocole médical adapté à la situation clinique du patient.',
+      },
+      {
+        title: 'Ablation par radiofréquence ou cryothérapie',
+        description:
+          'Intervention destinée à traiter certaines arythmies en ciblant les zones responsables du trouble du rythme cardiaque.',
+        process:
+          'Des sondes sont introduites par voie veineuse ; la durée varie selon la complexité du geste et le type d’arythmie traité.',
       },
       {
         title: "Mise en place d'un pacemaker ou défibrillateur",
         description:
-          "La mise en place d'un stimulateur cardiaque vise à normaliser un rythme cardiaque perturbé en utilisant des impulsions électriques. Un pacemaker surveille en continu l'activité cardiaque, identifie les irrégularités et envoie des signaux électriques pour rétablir un rythme approprié.",
+          'Implantation d’un dispositif de stimulation ou de protection cardiaque destiné à corriger certaines anomalies du rythme.',
         process:
-          "L'implantation d'un pacemaker, réalisée sous anesthésie locale, dure environ une heure, tandis que celle d'un défibrillateur automatique, nécessitant une anesthésie générale, peut prendre jusqu'à deux heures. La durée moyenne d'hospitalisation est de 2 jours.",
+          'L’implantation est réalisée sous anesthésie locale ou générale selon le matériel implanté et le contexte médical.',
       },
       {
-        title: "Contrôle de stimulateur ou défibrillateur cardiaque",
+        title: 'Contrôle de stimulateur ou défibrillateur cardiaque',
         description:
-          "La mise en place d'un dispositif de stimulation cardiaque requiert un suivi régulier pour garantir son bon fonctionnement.",
+          'Suivi régulier d’un dispositif implanté afin de vérifier son bon fonctionnement et d’adapter si besoin les réglages.',
         process:
-          "Lors des consultations de contrôle, le patient définit avec l'équipe médicale les modalités, la fréquence et les objectifs des suivis.",
+          'Les contrôles sont organisés en consultation spécialisée avec une fréquence adaptée au matériel et à la situation du patient.',
       },
       {
-        title: "Changement de boîtier",
+        title: 'Changement de boîtier',
         description:
-          "Le remplacement du boîtier du stimulateur cardiaque implique généralement une simple incision sur la cicatrice initiale pour retirer le boîtier existant, tester et reconnecter les sondes au nouveau boîtier.",
+          'Remplacement du boîtier d’un dispositif implanté lorsque cela devient nécessaire, tout en conservant si possible les sondes en place.',
         process:
-          "Le changement de boîtier se fait généralement sous anesthésie locale avec surveillance continue du rythme cardiaque, avec une hospitalisation moyenne d'un jour et une durée d'intervention de 15 à 40 minutes.",
+          'L’intervention est généralement réalisée sous anesthésie locale avec surveillance du rythme cardiaque et courte hospitalisation.',
       },
     ],
   },
+];
+
+export const exams: ExamItem[] = [
   {
-    slug: "cardiopathies-valvulaires",
-    title: "Cardiopathies valvulaires",
-    description:
-      "Les cardiopathies valvulaires sont des maladies cardiaques impliquant un dysfonctionnement des valves cardiaques, qui sont responsables de la régulation du flux sanguin à travers le cœur.",
-    procedures: [
-      {
-        title: "Échocardiographie Doppler transthoracique (ETT)",
-        description:
-          "Technique utilisant des ultrasons pour examiner le cœur et ses mouvements, afin de détecter d'éventuelles anomalies cardiaques. Son objectif principal est d'inspecter les diverses parties anatomiques du cœur.",
-        process:
-          "Pendant cette procédure sans douleur, d'une durée de 15 à 30 minutes, un gel est étalé sur la poitrine. Ensuite, le médecin déplace la sonde sur la peau pour observer le cœur.",
-      },
-      {
-        title: "Cathétérisme cardiaque hémodynamique",
-        description:
-          "Le cathétérisme cardiaque représente une technique d'intervention visant à évaluer la pression dans les cavités cardiaques et à vérifier le bon fonctionnement du système de circulation sanguine.",
-        process:
-          "Une minuscule sonde souple, connue sous le nom de cathéter, est introduite dans une artère ou une veine de l'aine ou du bras pour accéder au cœur. La durée peut varier de 45 minutes à 4 heures, nécessitant un séjour d'une à deux nuits.",
-      },
-      {
-        title: "Implantation de valve aortique percutanée (TAVI)",
-        description:
-          "La procédure de remplacement de la valve aortique par voie percutanée (TAVI) est utilisée pour traiter les patients présentant une sténose aortique symptomatique.",
-        process:
-          "La valve est insérée par voie percutanée à travers un cathéter. Un ballonnet est gonflé pour ouvrir la valve aortique percutanée. Cette procédure requiert une hospitalisation d'environ cinq jours.",
-      },
-      {
-        title: "Valvuloplastie aortique",
-        description:
-          "La valvuloplastie aortique percutanée est une méthode réservée aux patients souffrant d'un rétrécissement de la valve aortique et qui ne sont pas éligibles à une intervention chirurgicale traditionnelle.",
-        process:
-          "Après administration d'une anesthésie locale, le médecin insère un petit cathéter. À l'extrémité de la sonde se trouve un ballonnet qui est positionné et gonflé rapidement. Durée environ 30 minutes, hospitalisation de 5 à 7 jours.",
-      },
-    ],
+    slug: 'ecg',
+    title: 'ECG',
+    subtitle: 'Électrocardiogramme',
+    description: 'Examen simple permettant d’enregistrer l’activité électrique du cœur et d’orienter le diagnostic en cas de symptômes ou de suivi.',
+    process: 'Des électrodes sont placées sur la peau afin d’enregistrer le rythme cardiaque. L’examen est indolore et réalisé sur place.',
+    preparation: 'Aucune préparation particulière n’est généralement nécessaire.',
+    duration: '5 à 10 minutes',
+  },
+  {
+    slug: 'echographie-cardiaque',
+    title: 'Échographie cardiaque',
+    subtitle: 'Échocardiographie',
+    description: 'Examen d’imagerie par ultrasons qui étudie la structure du cœur, son fonctionnement et celui des valves cardiaques.',
+    process: 'Le médecin applique un gel sur la poitrine puis déplace une sonde pour visualiser le cœur en temps réel.',
+    preparation: 'Aucune préparation particulière, sauf indication contraire.',
+    duration: '15 à 30 minutes',
+  },
+  {
+    slug: 'test-deffort',
+    title: "Test d'effort",
+    subtitle: "Épreuve d'effort",
+    description: 'Examen qui analyse la réaction du cœur pendant un effort progressif afin d’évaluer la tolérance à l’exercice et d’orienter le diagnostic.',
+    process: 'L’examen se déroule sur vélo ou tapis avec surveillance continue de l’ECG et de la tension artérielle.',
+    preparation: 'Prévoir une tenue confortable ; les consignes spécifiques sont données lors du rendez-vous.',
+    duration: '15 à 30 minutes',
+  },
+  {
+    slug: 'holter-ecg',
+    title: 'Holter ECG',
+    subtitle: 'Enregistrement 24h / 48h',
+    description: 'Surveillance prolongée du rythme cardiaque afin de détecter certaines anomalies qui n’apparaissent pas toujours lors d’un ECG standard.',
+    process: 'Un petit appareil portable relié à des électrodes enregistre l’activité cardiaque pendant la vie quotidienne.',
+    preparation: 'Venir avec des vêtements pratiques ; les consignes sont précisées au moment de la pose.',
+    duration: 'Pose rapide puis enregistrement sur 24h à 48h',
+  },
+  {
+    slug: 'holter-tensionnel',
+    title: 'Holter tensionnel',
+    subtitle: 'Mesure ambulatoire de la tension',
+    description: 'Examen utile pour mesurer la tension artérielle sur 24 heures et mieux apprécier sa variabilité au cours de la journée et de la nuit.',
+    process: 'Un brassard automatique réalise des mesures régulières pendant les activités habituelles.',
+    preparation: 'Aucune préparation complexe ; il est recommandé de garder une journée aussi habituelle que possible.',
+    duration: 'Pose rapide puis enregistrement sur 24h',
   },
 ];
