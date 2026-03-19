@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { navigation, type NavItem } from '@/content/navigation';
-import { withBasePath } from '@/lib/paths';
-import { cn } from '@/lib/utils';
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { navigation, type NavItem } from "@/content/navigation";
+import { withBasePath } from "@/lib/paths";
+import { cn } from "@/lib/utils";
 
-const logoImg = withBasePath('/assets/logo-cardio.png');
+const logoImg = withBasePath("/assets/logo-cardio.png");
 
 function isActiveLink(pathname: string, href: string) {
-  if (href === '/') return pathname === '/';
+  if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
@@ -30,7 +30,9 @@ export default function Header() {
         <Link href="/" className="flex min-w-0 items-center gap-3">
           <img src={logoImg} alt="Service de cardiologie" className="h-10 w-auto sm:h-12" />
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-heading sm:text-base">Service de Cardiologie</p>
+            <p className="truncate text-sm font-semibold text-heading sm:text-base">
+              Service de Cardiologie
+            </p>
             <p className="hidden truncate text-xs text-body sm:block">Clinique Sainte Clotilde</p>
           </div>
         </Link>
@@ -43,8 +45,8 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    'inline-flex items-center gap-1 rounded-md px-2 py-1 text-sm font-medium transition-colors',
-                    itemActive ? 'text-primary' : 'text-heading hover:text-primary'
+                    "inline-flex items-center gap-1 rounded-md px-2 py-1 text-sm font-medium transition-colors",
+                    itemActive ? "text-primary" : "text-heading hover:text-primary",
                   )}
                 >
                   {item.label}
@@ -60,8 +62,10 @@ export default function Header() {
                           key={child.href}
                           href={child.href}
                           className={cn(
-                            'block rounded-lg px-4 py-2.5 text-sm transition-colors',
-                            childActive ? 'bg-section font-medium text-primary' : 'text-body hover:bg-section hover:text-primary'
+                            "block rounded-lg px-4 py-2.5 text-sm transition-colors",
+                            childActive
+                              ? "bg-section font-medium text-primary"
+                              : "text-body hover:bg-section hover:text-primary",
                           )}
                         >
                           {child.label}
@@ -76,7 +80,10 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Link href="/contact" className="inline-flex items-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90">
+          <Link
+            href="/contact"
+            className="inline-flex items-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+          >
             Prendre RDV
           </Link>
         </div>
@@ -85,7 +92,7 @@ export default function Header() {
           type="button"
           className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-border lg:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -98,12 +105,15 @@ export default function Header() {
               {navigation.map((item) => {
                 const itemActive = isItemActive(pathname, item);
                 return (
-                  <div key={item.href} className="rounded-xl border border-border/70 bg-card/60 p-2">
+                  <div
+                    key={item.href}
+                    className="rounded-xl border border-border/70 bg-card/60 p-2"
+                  >
                     <Link
                       href={item.href}
                       className={cn(
-                        'block rounded-lg px-3 py-2 text-sm font-medium',
-                        itemActive ? 'bg-section text-primary' : 'text-heading'
+                        "block rounded-lg px-3 py-2 text-sm font-medium",
+                        itemActive ? "bg-section text-primary" : "text-heading",
                       )}
                       onClick={() => setOpen(false)}
                     >
@@ -118,8 +128,10 @@ export default function Header() {
                               key={child.href}
                               href={child.href}
                               className={cn(
-                                'block rounded-lg px-3 py-2 text-sm transition-colors',
-                                childActive ? 'bg-section font-medium text-primary' : 'text-body hover:bg-section hover:text-primary'
+                                "block rounded-lg px-3 py-2 text-sm transition-colors",
+                                childActive
+                                  ? "bg-section font-medium text-primary"
+                                  : "text-body hover:bg-section hover:text-primary",
                               )}
                               onClick={() => setOpen(false)}
                             >
@@ -134,7 +146,11 @@ export default function Header() {
               })}
             </div>
 
-            <Link href="/contact" className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground" onClick={() => setOpen(false)}>
+            <Link
+              href="/contact"
+              className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+              onClick={() => setOpen(false)}
+            >
               Prendre RDV
             </Link>
           </div>

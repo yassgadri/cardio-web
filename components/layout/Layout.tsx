@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 const Layout = ({ children }: { children: ReactNode }) => <>{children}</>;
 

@@ -1,6 +1,6 @@
-import { notFound } from 'next/navigation';
-import SpecialtyPage from '@/components/site/SpecialtyPage';
-import { serviceCategories } from '@/content/services';
+import { notFound } from "next/navigation";
+import SpecialtyPage from "@/components/site/SpecialtyPage";
+import { serviceCategories } from "@/content/services";
 
 export function generateStaticParams() {
   return serviceCategories.map((category) => ({ slug: category.slug }));

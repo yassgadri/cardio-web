@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface PageBannerProps {
   title: string;
@@ -20,7 +20,12 @@ const PageBanner = ({ title, breadcrumb }: PageBannerProps) => (
         {title}
       </motion.h1>
       {breadcrumb && (
-        <motion.nav className="mt-4 flex items-center justify-center gap-2 text-sm text-primary-foreground/70" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
+        <motion.nav
+          className="mt-4 flex items-center justify-center gap-2 text-sm text-primary-foreground/70"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
           {breadcrumb.map((item, i) => (
             <span key={i} className="flex items-center gap-2">
               {i > 0 && <span className="opacity-50">›</span>}

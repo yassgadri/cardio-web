@@ -5,49 +5,49 @@ export interface NavItem {
 }
 
 export const navigation: NavItem[] = [
-  { label: 'Accueil', href: '/' },
+  { label: "Accueil", href: "/" },
   {
-    label: 'Spécialités',
-    href: '/specialites',
+    label: "Spécialités",
+    href: "/specialites",
     children: [
-      { label: 'Explorations non invasives', href: '/explorations-non-invasives' },
-      { label: 'Cardiologie interventionnelle', href: '/cardiologie-interventionnelle' },
-      { label: 'Rythmologie', href: '/rythmologie' },
+      { label: "Explorations non invasives", href: "/explorations-non-invasives" },
+      { label: "Cardiologie interventionnelle", href: "/cardiologie-interventionnelle" },
+      { label: "Rythmologie", href: "/rythmologie" },
     ],
   },
-  { label: 'Examens', href: '/examens' },
+  { label: "Médecins", href: "/medecins-professionnels" },
   {
-    label: 'Parcours patient',
-    href: '/parcours-patient',
+    label: "Parcours patient",
+    href: "/parcours-patient",
     children: [
-      { label: 'Consultation', href: '/consultation' },
-      { label: 'Hospitalisation', href: '/hospitalisation' },
-      { label: 'Préparer ma visite', href: '/preparer-ma-visite' },
-      { label: 'Accès', href: '/acces' },
+      { label: "Consultation", href: "/consultation" },
+      { label: "Hospitalisation", href: "/hospitalisation" },
+      { label: "Préparer ma visite", href: "/preparer-ma-visite" },
+      { label: "Accès", href: "/acces" },
     ],
   },
-  { label: 'Contact', href: '/contact' },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const contactInfo = {
-  phone: '+262 2 62 48 21 22',
-  fax: '+262 2 62 48 24 54',
-  email: 'Sec.cscardio.csc@clinifutur.net',
-  address: '127, route du Bois de Nèfles',
-  city: '97490 SAINTE-CLOTILDE',
-  phoneHospitalisation: '+262 2 62 48 20 56',
-  faxHospitalisation: '+262 2 62 48 20 85',
+  phone: "+262 2 62 48 21 22",
+  fax: "+262 2 62 48 24 54",
+  email: "Sec.cscardio.csc@clinifutur.net",
+  address: "Clinique Sainte-Clotilde, 127 route du Bois de Nèfles",
+  city: "97490 Sainte-Clotilde, La Réunion",
+  phoneHospitalisation: "+262 2 62 48 20 56",
+  faxHospitalisation: "+262 2 62 48 20 85",
 };
 
 export const socialLinks = {
-  facebook: '#',
-  youtube: '#',
-  linkedin: '#',
+  facebook: "https://www.facebook.com/RH.CliniqueSainteClotilde",
+  youtube: "https://www.youtube.com/@clinifutur4075",
+  linkedin: "https://www.linkedin.com/company/clinifutur/",
 };
 
 export const stats = [
-  { value: '3', label: 'Axes de prise en charge' },
-  { value: '5', label: 'Examens principaux' },
-  { value: '30+', label: "Années d'expérience" },
-  { value: '4', label: 'Rubriques patient' },
+  { value: "8+", label: "Cardiologues" },
+  { value: "12+", label: "Infirmiers" },
+  { value: "20+", label: "Professionnels de santé" },
+  { value: "30+", label: "Années d'expérience" },
 ];

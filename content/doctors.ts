@@ -7,61 +7,42 @@ export interface Doctor {
 export const doctors: Doctor[] = [
   {
     name: "Dr. Christophe Pouillot",
-    qualifications: [
-      "Ancien interne des hôpitaux",
-      "Ex-Chef de Clinique Cardiologique",
-      "Ex-Assistant des hôpitaux de Rennes",
-    ],
+    qualifications: ["Cardiologie interventionnelle"],
     email: "christophe.pouillot@clinifutur.net",
   },
   {
     name: "Dr. Geoffray Rambaud",
-    qualifications: [
-      "Ancien interne des hôpitaux",
-      "Ex-Chef de Clinique Cardiologique",
-      "Ex-Assistant des hôpitaux de Limoges",
-    ],
+    qualifications: ["Consultation", "Exploration non invasive", "Cardiologie interventionnelle"],
     email: "rambaud.geo@gmail.com",
   },
   {
     name: "Dr. Christophe Geyer",
-    qualifications: [
-      "Ancien assistant Chef de Clinique des Hôpitaux de Paris",
-      "Ancien praticien hospitalier des Hospices",
-      "Civils de Lyon",
-    ],
+    qualifications: ["Consultation", "Exploration non invasive", "Cardiologie interventionnelle"],
     email: "christophe.geyer993@orange.fr",
   },
   {
     name: "Dr. Karim Bougrini",
-    qualifications: [
-      "Ancien interne des hôpitaux",
-      "Ex-Chef de Clinique Cardiologique",
-      "Ex-Assistant des hôpitaux de Paris",
-    ],
+    qualifications: ["Consultation", "Exploration non invasive", "Cardiologie interventionnelle"],
     email: "kbougrini@yahoo.fr",
   },
   {
     name: "Dr. Richard Vi-Fane",
-    qualifications: ["Ancien interne des Hôpitaux"],
+    qualifications: ["Consultation", "Exploration non invasive", "Cardiologie interventionnelle"],
     email: "richard.vifane@clinifutur.net",
   },
   {
     name: "Dr. Jens Glasenapp",
-    qualifications: ["Ancien interne des Hôpitaux"],
+    qualifications: ["Consultation", "Exploration non invasive", "Cardiologie interventionnelle"],
     email: "jens.glasenapp@gmx.fr",
   },
   {
     name: "Dr. Yassine Gadri",
-    qualifications: ["Ancien interne des Hôpitaux"],
+    qualifications: ["Consultation", "Exploration non invasive", "Cardiologie interventionnelle"],
     email: "yassine.gadri@clinifutur.net",
   },
   {
     name: "Dr. David Huchette",
-    qualifications: [
-      "Ancien interne du CHU de Lille",
-      "Ancien chef de clinique de CHRU de Lille",
-    ],
+    qualifications: ["Consultation", "Exploration non invasive", "Rythmologie"],
     email: "david_huchette@hotmail.com",
   },
 ];
