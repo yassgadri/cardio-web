@@ -30,12 +30,6 @@ const items = [
   },
 ];
 
-const gallery = [
-  withBasePath("/assets/uploads/1000002594.jpg"),
-  withBasePath("/assets/uploads/1000002606.jpg"),
-  withBasePath("/assets/uploads/1000002600.jpg"),
-];
-
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
@@ -86,20 +80,6 @@ export default function PatientJourneyPage() {
               </motion.div>
             ))}
           </div>
-
-          <motion.div className="mt-12" {...fadeUp}>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-              {gallery.map((img, index) => (
-                <div key={img} className="overflow-hidden rounded-xl">
-                  <img
-                    src={img}
-                    alt={`Service de cardiologie ${index + 1}`}
-                    className="h-64 w-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
     </Layout>

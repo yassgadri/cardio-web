@@ -2,49 +2,17 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Phone,
-  HeartPulse,
-  Activity,
-  Stethoscope,
-  ClipboardList,
-  UserRound,
-} from "lucide-react";
+import { ArrowRight, HeartPulse, Activity, Stethoscope } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/SectionHeading";
-import { serviceCategories, exams } from "@/content/services";
-import { stats, contactInfo } from "@/content/navigation";
-import { doctors } from "@/content/doctors";
+import { serviceCategories } from "@/content/services";
 import { withBasePath } from "@/lib/paths";
 
 const heroImg = withBasePath("/assets/hero-cardio.jpg");
-const serviceImg = withBasePath("/assets/uploads/1000002606.jpg");
-const doctorsImg = withBasePath("/assets/uploads/1000002594.jpg");
-const interventionImg = withBasePath("/assets/uploads/1000002612.jpg");
+const serviceImg = withBasePath("/assets/salle-de-soins.png");
+const doctorsImg = withBasePath("/assets/secreteriat.jpg");
+const interventionImg = withBasePath("/assets/bloc.jpg");
 const serviceIcons = [HeartPulse, Activity, Stethoscope];
-const patientCards = [
-  {
-    title: "Consultation",
-    href: "/consultation",
-    text: "Prise de rendez-vous, première évaluation, suivi spécialisé et interprétation des examens.",
-  },
-  {
-    title: "Hospitalisation",
-    href: "/hospitalisation",
-    text: "Informations utiles sur le séjour, le secrétariat dédié et l’environnement d’accueil du service.",
-  },
-  {
-    title: "Préparer ma visite",
-    href: "/preparer-ma-visite",
-    text: "Documents à apporter, traitements en cours et recommandations simples avant votre venue.",
-  },
-  {
-    title: "Accès",
-    href: "/acces",
-    text: "Coordonnées, localisation de la clinique et moyens pratiques pour rejoindre le service.",
-  },
-];
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },

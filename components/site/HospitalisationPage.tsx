@@ -24,23 +24,14 @@ const amenities = [
 
 const gallery = [
   {
-    src: withBasePath("/assets/uploads/1000002588.jpg"),
+    src: withBasePath("/assets/unite-ambulatoire.jpg"),
     alt: "Unité d’hospitalisation ambulatoire",
   },
   {
-    src: withBasePath("/assets/uploads/1000002600.jpg"),
+    src: withBasePath("/assets/chambre.jpg"),
     alt: "Chambre d’hospitalisation conventionnelle",
   },
-  /*{
-    src: withBasePath("/assets/uploads/1000002606.jpg"),
-    alt: "Unité d’hospitalisation cardiologique",
-  },*/
-  { src: withBasePath("/assets/uploads/1000002590.jpg"), alt: "Préparation des soins" },
-  /*{ src: withBasePath("/assets/uploads/1000002594.jpg"), alt: "Poste de soins" },
-  {
-    src: withBasePath("/assets/uploads/1000002612.jpg"),
-    alt: "Salle de cardiologie interventionnelle",
-  },*/
+  { src: withBasePath("/assets/soins.jpg"), alt: "Préparation des soins" },
 ];
 
 export default function HospitalisationPage() {
@@ -62,7 +53,7 @@ export default function HospitalisationPage() {
             </p>
             <h2 className="mb-4 text-2xl md:text-3xl">Hospitalisation</h2>
             <div className="mb-6 h-1 w-16 rounded-full bg-primary" />
-            <p className="mb-8 text-body leading-relaxed">
+            <div className="mb-8 text-body leading-relaxed">
               <p>
                 Lorsque votre état nécessite une surveillance, un examen spécialisé ou un geste
                 interventionnel, une hospitalisation peut être proposée.
@@ -75,7 +66,7 @@ export default function HospitalisationPage() {
                 Tout est organisé pour assurer votre sécurité, la continuité des soins et votre
                 confort tout au long de votre prise en charge.
               </p>
-            </p>
+            </div>
             <h3 className="mb-4 text-lg font-semibold">Capacité d'accueil</h3>
             <p className="mb-8 text-body leading-relaxed">
               35 lits de cardiologie (dont 8 lits de soins intensifs de cardiologie, 6 lits
