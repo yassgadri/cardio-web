@@ -28,13 +28,6 @@ export const serviceCategories: ServiceCategory[] = [
     description:
       "Examens cardiologiques permettant d’évaluer le cœur sans geste invasif, afin de guider le diagnostic, le suivi et la stratégie thérapeutique.",
     procedures: [
-      /*{
-        title: "Électrocardiogramme (ECG)",
-        description:
-          "Examen simple et rapide qui enregistre l’activité électrique du cœur afin d’analyser le rythme cardiaque et d’orienter le diagnostic.",
-        process:
-          "Des électrodes sont placées sur le thorax, les poignets et les chevilles. L’examen est indolore et dure généralement quelques minutes.",
-      },*/
       {
         title: "Échocardiographie Doppler transthoracique (ETT)",
         description:

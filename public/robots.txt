@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cardiologie-sainteclotilde.re/sitemap.xml
+Host: https://cardiologie-sainteclotilde.re
