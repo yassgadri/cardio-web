@@ -15,7 +15,7 @@ export const navigation: NavItem[] = [
       { label: "Rythmologie", href: "/rythmologie" },
     ],
   },
-  { label: "Médecins", href: "/medecins-professionnels" },
+  { label: "Médecins", href: "/medecins" },
   {
     label: "Parcours patient",
     href: "/parcours-patient",

@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/site";
 const staticRoutes = [
   "/",
   "/qui-sommes-nous",
-  "/medecins-professionnels",
+  "/medecins",
   "/consultation",
   "/examens",
   "/specialites",

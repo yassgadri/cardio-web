@@ -90,7 +90,7 @@ export default function HomePage() {
                   En savoir plus
                 </Link>
                 <Link
-                  href="/medecins-professionnels"
+                  href="/medecins"
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-background"
                 >
                   Voir les médecins

@@ -65,7 +65,7 @@ const Footer = () => (
             </li>
             <li>
               <Link
-                href="/medecins-professionnels"
+                href="/medecins"
                 className="opacity-70 transition-opacity hover:opacity-100"
               >
                 Médecins
