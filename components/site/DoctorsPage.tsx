@@ -20,7 +20,7 @@ export default function DoctorsPage() {
     <Layout>
       <PageBanner
         title="Médecins"
-        breadcrumb={[{ label: "Selarl de cardiologie", href: "/" }, { label: "Médecins" }]}
+        breadcrumb={[{ label: "Service de cardiologie", href: "/" }, { label: "Médecins" }]}
       />
       <section className="section-padding">
         <div className="container-main">

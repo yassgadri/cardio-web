@@ -35,7 +35,7 @@ jobs:
       - name: Build static export
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /cardio-next
+          NEXT_PUBLIC_BASE_PATH: /cardio-web
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
