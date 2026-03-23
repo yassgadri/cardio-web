@@ -117,7 +117,7 @@ export const serviceCategories: ServiceCategory[] = [
   },
   {
     slug: "rythmologie",
-    title: "Rythmologie",
+    title: "Rythmologie interventionnelle",
     description:
       "Évaluation et traitement des troubles du rythme cardiaque, des palpitations et des anomalies de conduction nécessitant un suivi spécialisé.",
     procedures: [
@@ -137,7 +137,7 @@ export const serviceCategories: ServiceCategory[] = [
       },
       {
         title:
-          "Ablation par radiofréquence ou cryothérapie (flutter, fibrillation auriculaire, tachycardie supraventriculaire, extra systoles ventriculaires, etc.)",
+          "Ablation par radiofréquence ou électroporation (flutter, fibrillation auriculaire, tachycardie supraventriculaire, extra systoles ventriculaires, etc.)",
         description:
           "Intervention destinée à traiter certaines arythmies en ciblant les zones responsables du trouble du rythme cardiaque.",
         process:

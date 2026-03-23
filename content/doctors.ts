@@ -42,7 +42,7 @@ export const doctors: Doctor[] = [
   },
   {
     name: "Dr. David Huchette",
-    qualifications: ["Consultation", "Exploration non invasive", "Rythmologie"],
+    qualifications: ["Consultation", "Exploration non invasive", "Rythmologie interventionnelle"],
     email: "david_huchette@hotmail.com",
   },
 ];
