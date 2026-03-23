@@ -12,7 +12,7 @@ export const navigation: NavItem[] = [
     children: [
       { label: "Explorations non invasives", href: "/explorations-non-invasives" },
       { label: "Cardiologie interventionnelle", href: "/cardiologie-interventionnelle" },
-      { label: "Rythmologie", href: "/rythmologie" },
+      { label: "Rythmologie interventionnelle", href: "/rythmologie" },
     ],
   },
   { label: "Médecins", href: "/medecins-professionnels" },
