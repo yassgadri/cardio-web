@@ -7,7 +7,7 @@ import PageBanner from "@/components/layout/PageBanner";
 import SectionHeading from "@/components/SectionHeading";
 import { withBasePath } from "@/lib/paths";
 
-const aboutImg = withBasePath("/assets/about-cardio.jpg");
+const aboutImg = withBasePath("/assets/clinique.webp");
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
