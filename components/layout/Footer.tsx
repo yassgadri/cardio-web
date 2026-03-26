@@ -168,10 +168,22 @@ const Footer = () => (
         </div>
       </div>
     </div>
+
     <div className="border-t border-muted/10">
-      <div className="container-main py-4 text-center text-xs opacity-50">
-        © {new Date().getFullYear()} Service de Cardiologie — Clinique Sainte Clotilde. Tous droits
-        réservés.
+      <div className="container-main flex flex-col items-center justify-between gap-2 py-4 text-center text-xs opacity-50 md:flex-row md:text-left">
+        <div>
+          © {new Date().getFullYear()} Service de Cardiologie — Clinique Sainte Clotilde. Tous
+          droits réservés.
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <Link href="/mentions-legales" className="transition-opacity hover:opacity-100">
+            Mentions légales
+          </Link>
+          <Link href="/politique-confidentialite" className="transition-opacity hover:opacity-100">
+            Politique de confidentialité
+          </Link>
+        </div>
       </div>
     </div>
   </footer>
