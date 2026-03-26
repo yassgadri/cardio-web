@@ -8,7 +8,7 @@ import SectionHeading from "@/components/SectionHeading";
 import { serviceCategories } from "@/content/services";
 import { withBasePath } from "@/lib/paths";
 
-const heroImg = withBasePath("/assets/hero-cardio.jpg");
+const heroImg = withBasePath("/assets/hero.jpg");
 const serviceImg = withBasePath("/assets/salle-de-soins.png");
 const doctorsImg = withBasePath("/assets/secreteriat.jpg");
 const interventionImg = withBasePath("/assets/bloc.jpg");

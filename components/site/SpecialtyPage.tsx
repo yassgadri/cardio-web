@@ -38,16 +38,30 @@ export default function SpecialtyPage({ slug }: { slug: string }) {
         ]}
       />
       <section className="section-padding">
-        <div className="container-main max-w-4xl">
-          <motion.div className="mb-8" {...fadeUp}>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
-              Spécialité
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl">{category.title}</h2>
-            <div className="mt-4 h-1 w-16 rounded-full bg-primary" />
-            <p className="mt-6 text-body leading-relaxed">{category.description}</p>
-          </motion.div>
+        <div className="container-main max-w-6xl">
+          {/* HEADER: texte + image */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
+            {/* TEXTE */}
+            <motion.div {...fadeUp}>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
+                Spécialité
+              </p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl">{category.title}</h2>
+              <div className="mt-4 h-1 w-16 rounded-full bg-primary" />
+              <p className="mt-6 text-body leading-relaxed">{category.description}</p>
+            </motion.div>
 
+            {/* IMAGE */}
+            <motion.div className="w-full h-full" {...fadeUp}>
+              <img
+                src={category.image}
+                alt={category.title}
+                className="w-full h-[250px] md:h-[300px] object-cover rounded-2xl shadow-md"
+              />
+            </motion.div>
+          </div>
+
+          {/* LISTE DES PROCEDURES */}
           <div className="space-y-12">
             {category.procedures.map((proc, i) => (
               <motion.div
@@ -59,6 +73,7 @@ export default function SpecialtyPage({ slug }: { slug: string }) {
                 <h3 className="mb-6 text-xl font-semibold text-heading">
                   {String(i + 1).padStart(2, "0")}. {proc.title}
                 </h3>
+
                 <div className="space-y-4">
                   <div>
                     <h4 className="mb-2 text-sm font-semibold uppercase tracking-wider text-heading">
@@ -68,6 +83,7 @@ export default function SpecialtyPage({ slug }: { slug: string }) {
                       {proc.description}
                     </p>
                   </div>
+
                   <div>
                     <h4 className="mb-2 text-sm font-semibold uppercase tracking-wider text-heading">
                       Déroulement
