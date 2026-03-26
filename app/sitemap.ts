@@ -15,7 +15,6 @@ const staticRoutes = [
   "/parcours-patient",
   "/hospitalisation",
   "/preparer-ma-visite",
-  "/acces",
   "/contact",
 ];
 

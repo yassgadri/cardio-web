@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Facebook, Youtube, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { SiFacebook as Facebook, SiYoutube as Youtube } from "react-icons/si";
+import { LuLinkedin as Linkedin } from "react-icons/lu";
 import { contactInfo, socialLinks } from "@/content/navigation";
 
 const Footer = () => (
@@ -64,10 +66,7 @@ const Footer = () => (
               </Link>
             </li>
             <li>
-              <Link
-                href="/medecins"
-                className="opacity-70 transition-opacity hover:opacity-100"
-              >
+              <Link href="/medecins" className="opacity-70 transition-opacity hover:opacity-100">
                 Médecins
               </Link>
             </li>
