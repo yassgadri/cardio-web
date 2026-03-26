@@ -25,7 +25,7 @@ const items = [
   },
   {
     title: "Accès",
-    href: "/conact",
+    href: "/contact",
     text: "Consulter l’adresse, les coordonnées utiles et la localisation du service de cardiologie.",
   },
 ];
