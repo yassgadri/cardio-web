@@ -39,7 +39,7 @@ export const contactInfo = {
 };
 
 export const socialLinks = {
-  facebook: "https://www.facebook.com/RH.CliniqueSainteClotilde",
+  facebook: "https://www.facebook.com/clinifutur/",
   youtube: "https://www.youtube.com/@clinifutur4075",
   linkedin: "https://www.linkedin.com/company/clinifutur/",
 };
