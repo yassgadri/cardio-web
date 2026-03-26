@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, FileText } from "lucide-react";
+import { Phone, Mail, Printer, MapPin } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageBanner from "@/components/layout/PageBanner";
 import { contactInfo } from "@/content/navigation";
@@ -78,52 +78,41 @@ export default function ContactPage() {
             </motion.div>
           </div>
 
-          <motion.div className="medical-card mt-6 px-5 py-6" {...fadeUp}>
-            <div className="flex items-start gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <FileText className="h-5 w-5 text-primary" />
-              </div>
-              <div className="text-sm leading-relaxed text-body md:text-base">
-                <p className="mb-2 font-semibold text-heading">Informations complémentaires</p>
-                <p>Fax consultation : {contactInfo.fax}</p>
-                <p>Fax hospitalisation : {contactInfo.faxHospitalisation}</p>
-              </div>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <motion.div className="medical-card px-5 py-6 text-center" {...fadeUp}>
+              <Printer className="mx-auto mb-3 h-7 w-7 text-primary" />
+              <h3 className="mb-2 text-lg font-semibold">Fax consultation</h3>
+              <p>{contactInfo.fax}</p>
+            </motion.div>
 
-          <motion.div className="medical-card mt-6 px-5 py-6 text-center" {...fadeUp}>
-            <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                `Clinique Sainte-Clotilde, ${contactInfo.address}, ${contactInfo.city}`,
-              )}`}
-              target="_blank"
-              rel="noreferrer"
-              className="mb-4 inline-block text-sm font-medium text-primary hover:underline md:text-base"
-            >
-              Voir sur Google Maps — Clinique Sainte-Clotilde, {contactInfo.address},{" "}
-              {contactInfo.city}
-            </a>
+            <motion.div className="medical-card px-5 py-6 text-center" {...fadeUp}>
+              <Printer className="mx-auto mb-3 h-7 w-7 text-primary" />
+              <h3 className="mb-2 text-lg font-semibold">Fax hospitalisation</h3>
+              <p>{contactInfo.fax}</p>
+            </motion.div>
 
-            <div className="relative aspect-[16/7] overflow-hidden rounded-lg">
-              <iframe
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                loading="lazy"
-                allowFullScreen
-                src={`https://www.google.com/maps?q=${encodeURIComponent(
+            <motion.div className="medical-card px-5 py-6 text-center" {...fadeUp}>
+              <MapPin className="mx-auto mb-3 h-7 w-7 text-primary" />
+              <h3 className="mb-2 text-lg font-semibold">Adresse</h3>
+              <p className="text-sm leading-7 text-body md:text-base">
+                Clinique Sainte-Clotilde
+                <br />
+                {contactInfo.address}
+                <br />
+                {contactInfo.city}
+              </p>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
                   `Clinique Sainte-Clotilde, ${contactInfo.address}, ${contactInfo.city}`,
-                )}&output=embed`}
-              />
-
-              <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full">
-                <div className="relative">
-                  <span className="absolute inline-flex h-6 w-6 rounded-full bg-primary opacity-75 animate-ping"></span>
-                  <span className="relative inline-flex h-6 w-6 rounded-full border-2 border-white bg-primary shadow-lg"></span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+                )}`}
+                target="_blank"
+                rel="noreferrer"
+                className="mb-4 inline-block text-sm font-medium text-primary hover:underline md:text-base"
+              >
+                Voir sur Google Maps
+              </a>
+            </motion.div>
+          </div>
         </div>
       </section>
     </Layout>
