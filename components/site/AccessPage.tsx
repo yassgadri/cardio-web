@@ -42,6 +42,8 @@ export default function AccessPage() {
               <MapPin className="mx-auto mb-3 h-7 w-7 text-primary" />
               <h3 className="mb-2 text-lg font-semibold">Adresse</h3>
               <p className="text-sm leading-7 text-body md:text-base">
+                Clinique Sainte-Clotilde
+                <br />
                 {contactInfo.address}
                 <br />
                 {contactInfo.city}
@@ -82,13 +84,14 @@ export default function AccessPage() {
           <motion.div className="medical-card mt-6 px-5 py-6 text-center" {...fadeUp}>
             <a
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                `${contactInfo.address}, ${contactInfo.city}`,
+                `Clinique Sainte-Clotilde, ${contactInfo.address}, ${contactInfo.city}`,
               )}`}
               target="_blank"
               rel="noreferrer"
               className="mb-4 inline-block text-sm font-medium text-primary hover:underline md:text-base"
             >
-              Voir sur Google Maps — {contactInfo.address}, {contactInfo.city}
+              Voir sur Google Maps — Clinique Sainte-Clotilde, {contactInfo.address},{" "}
+              {contactInfo.city}
             </a>
 
             <div className="relative aspect-[16/7] overflow-hidden rounded-lg">
@@ -99,7 +102,7 @@ export default function AccessPage() {
                 loading="lazy"
                 allowFullScreen
                 src={`https://www.google.com/maps?q=${encodeURIComponent(
-                  `${contactInfo.address}, ${contactInfo.city}`,
+                  `Clinique Sainte-Clotilde, ${contactInfo.address}, ${contactInfo.city}`,
                 )}&output=embed`}
               />
 
