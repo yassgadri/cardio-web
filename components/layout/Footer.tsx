@@ -84,11 +84,6 @@ const Footer = () => (
                 Le service
               </Link>
             </li>
-            <li>
-              <Link href="/contact" className="opacity-70 transition-opacity hover:opacity-100">
-                Contact
-              </Link>
-            </li>
           </ul>
         </div>
 
@@ -122,8 +117,8 @@ const Footer = () => (
               </Link>
             </li>
             <li>
-              <Link href="/acces" className="opacity-70 transition-opacity hover:opacity-100">
-                Accès
+              <Link href="/contact" className="opacity-70 transition-opacity hover:opacity-100">
+                Contact
               </Link>
             </li>
           </ul>
@@ -153,7 +148,7 @@ const Footer = () => (
                 {contactInfo.phone}
               </a>
             </li>
-            <li className="mt-0.5 opacity-70">Fax +262 2 62 48 24 54</li>
+            <li className="mt-0.5 opacity-70">Fax {contactInfo.fax}</li>
             <li>
               <a
                 href={`mailto:${contactInfo.email}`}

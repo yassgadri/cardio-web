@@ -23,19 +23,22 @@ export const navigation: NavItem[] = [
       { label: "Consultation", href: "/consultation" },
       { label: "Hospitalisation", href: "/hospitalisation" },
       { label: "Préparer ma visite", href: "/preparer-ma-visite" },
-      { label: "Accès", href: "/acces" },
+      { label: "Accès", href: "/contact" },
     ],
   },
 ];
 
 export const contactInfo = {
+  address: "127 route du Bois de Nèfles",
+  city: "97490 Sainte-Clotilde, La Réunion",
+  // Consultation
   phone: "+262 2 62 48 21 22",
   fax: "+262 2 62 48 24 54",
   email: "sec.cscardio.csc@clinifutur.net",
-  address: "127 route du Bois de Nèfles",
-  city: "97490 Sainte-Clotilde, La Réunion",
-  phoneHospitalisation: "+262 2 62 48 20 56",
-  faxHospitalisation: "+262 2 62 48 20 85",
+  // Hospitalisation
+  hospitalisationPhone: "+262 2 62 48 20 56",
+  hospitalisationFax: "+262 2 62 48 20 85",
+  hospitalisationEmail: "sec.cardiologie.csc@clinifutur.net",
 };
 
 export const socialLinks = {

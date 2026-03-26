@@ -9,7 +9,7 @@ export const nav = [
       { label: "Consultation", path: "/consultation" },
       { label: "Hospitalisation", path: "/hospitalisation" },
       { label: "Préparer ma visite", path: "/preparer" },
-      { label: "Accès", path: "/acces" },
+      { label: "Accès", path: "/contact" },
     ],
   },
   { label: "Contact", path: "/contact" },

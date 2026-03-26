@@ -1,5 +1,5 @@
-import AccessPage from "@/components/site/AccessPage";
+import ContactPage from "@/components/site/ContactPage";
 
 export default function Page() {
-  return <AccessPage />;
+  return <ContactPage />;
 }

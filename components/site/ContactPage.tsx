@@ -33,10 +33,34 @@ export default function ContactPage() {
             </p>
           </motion.div>
 
+          <motion.div className="medical-card px-5 py-6 text-center" {...fadeUp}>
+            <MapPin className="mx-auto mb-3 h-7 w-7 text-primary" />
+            <h3 className="mb-2 text-lg font-semibold">Adresse</h3>
+            <p className="text-sm leading-7 text-body md:text-base">
+              Clinique Sainte-Clotilde
+              <br />
+              {contactInfo.address}
+              <br />
+              {contactInfo.city}
+            </p>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                `Clinique Sainte-Clotilde, ${contactInfo.address}, ${contactInfo.city}`,
+              )}`}
+              target="_blank"
+              rel="noreferrer"
+              className="mb-4 inline-block text-sm font-medium text-primary hover:underline md:text-base"
+            >
+              Voir sur Google Maps
+            </a>
+          </motion.div>
+
+          <h3 className="text-xl md:text-2xl lg:text-3xl mt-8 mb-4">Consultation</h3>
+
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
             <motion.div className="medical-card px-5 py-6 text-center" {...fadeUp}>
               <Phone className="mx-auto mb-3 h-7 w-7 text-primary" />
-              <h3 className="mb-2 text-lg font-semibold">Consultation</h3>
+              <h3 className="mb-2 text-lg font-semibold">Téléphone</h3>
               <div className="space-y-2 text-sm md:text-base">
                 <a
                   href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
@@ -52,14 +76,9 @@ export default function ContactPage() {
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.1 }}
             >
-              <Phone className="mx-auto mb-3 h-7 w-7 text-primary" />
-              <h3 className="mb-2 text-lg font-semibold">Hospitalisation</h3>
-              <a
-                href={`tel:${contactInfo.phoneHospitalisation.replace(/\s/g, "")}`}
-                className="block font-medium text-primary hover:underline"
-              >
-                {contactInfo.phoneHospitalisation}
-              </a>
+              <Printer className="mx-auto mb-3 h-7 w-7 text-primary" />
+              <h3 className="mb-2 text-lg font-semibold">Fax</h3>
+              <p>{contactInfo.fax}</p>
             </motion.div>
 
             <motion.div
@@ -78,38 +97,44 @@ export default function ContactPage() {
             </motion.div>
           </div>
 
+          <h3 className="text-xl md:text-2xl lg:text-3xl mt-8 mb-4">Hospitalisation</h3>
+
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
             <motion.div className="medical-card px-5 py-6 text-center" {...fadeUp}>
-              <Printer className="mx-auto mb-3 h-7 w-7 text-primary" />
-              <h3 className="mb-2 text-lg font-semibold">Fax consultation</h3>
-              <p>{contactInfo.fax}</p>
+              <Phone className="mx-auto mb-3 h-7 w-7 text-primary" />
+              <h3 className="mb-2 text-lg font-semibold">Téléphone</h3>
+              <div className="space-y-2 text-sm md:text-base">
+                <a
+                  href={`tel:${contactInfo.hospitalisationPhone.replace(/\s/g, "")}`}
+                  className="block font-medium text-primary hover:underline"
+                >
+                  {contactInfo.hospitalisationPhone}
+                </a>
+              </div>
             </motion.div>
 
-            <motion.div className="medical-card px-5 py-6 text-center" {...fadeUp}>
+            <motion.div
+              className="medical-card px-5 py-6 text-center"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.1 }}
+            >
               <Printer className="mx-auto mb-3 h-7 w-7 text-primary" />
-              <h3 className="mb-2 text-lg font-semibold">Fax hospitalisation</h3>
-              <p>{contactInfo.fax}</p>
+              <h3 className="mb-2 text-lg font-semibold">Fax</h3>
+              <p>{contactInfo.hospitalisationFax}</p>
             </motion.div>
 
-            <motion.div className="medical-card px-5 py-6 text-center" {...fadeUp}>
-              <MapPin className="mx-auto mb-3 h-7 w-7 text-primary" />
-              <h3 className="mb-2 text-lg font-semibold">Adresse</h3>
-              <p className="text-sm leading-7 text-body md:text-base">
-                Clinique Sainte-Clotilde
-                <br />
-                {contactInfo.address}
-                <br />
-                {contactInfo.city}
-              </p>
+            <motion.div
+              className="medical-card px-5 py-6 text-center"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.2 }}
+            >
+              <Mail className="mx-auto mb-3 h-7 w-7 text-primary" />
+              <h3 className="mb-2 text-lg font-semibold">Email</h3>
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                  `Clinique Sainte-Clotilde, ${contactInfo.address}, ${contactInfo.city}`,
-                )}`}
-                target="_blank"
-                rel="noreferrer"
-                className="mb-4 inline-block text-sm font-medium text-primary hover:underline md:text-base"
+                href={`mailto:${contactInfo.hospitalisationEmail}`}
+                className="text-sm font-medium text-primary hover:underline md:text-[15px] whitespace-nowrap"
               >
-                Voir sur Google Maps
+                {contactInfo.hospitalisationEmail}
               </a>
             </motion.div>
           </div>
