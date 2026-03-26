@@ -14,6 +14,9 @@ const Footer = () => (
             Consultations, examens et prise en charge cardiologique à la Clinique Sainte Clotilde,
             avec un parcours patient clair et structuré.
           </p>
+          <p className="mt-3 text-sm leading-relaxed opacity-70">
+            Cardiologie Sainte-Clotilde – Saint-Denis, La Réunion.
+          </p>
           <div className="mt-4 flex items-center gap-3">
             <a
               href={socialLinks.facebook}
@@ -62,7 +65,7 @@ const Footer = () => (
             </li>
             <li>
               <Link
-                href="/medecins-professionnels"
+                href="/medecins"
                 className="opacity-70 transition-opacity hover:opacity-100"
               >
                 Médecins
