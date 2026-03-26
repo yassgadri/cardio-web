@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, Printer, MapPin } from "lucide-react";
 import { SiFacebook as Facebook, SiYoutube as Youtube } from "react-icons/si";
 import { LuLinkedin as Linkedin } from "react-icons/lu";
 import { contactInfo, socialLinks } from "@/content/navigation";
@@ -120,7 +120,7 @@ const Footer = () => (
             </li>
             <li>
               <Link href="/contact" className="opacity-70 transition-opacity hover:opacity-100">
-                Contact
+                Accès
               </Link>
             </li>
           </ul>
@@ -150,7 +150,9 @@ const Footer = () => (
                 {contactInfo.phone}
               </a>
             </li>
-            <li className="mt-0.5 opacity-70">Fax {contactInfo.fax}</li>
+            <li className="flex items-center gap-2 opacity-70 transition-opacity hover:opacity-100">
+              <Printer className="h-4 w-4 shrink-0" /> {contactInfo.fax}
+            </li>
             <li>
               <a
                 href={`mailto:${contactInfo.email}`}
