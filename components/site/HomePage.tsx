@@ -12,6 +12,7 @@ const heroImg = withBasePath("/assets/hero.jpg");
 const serviceImg = withBasePath("/assets/salle-de-soins.png");
 const doctorsImg = withBasePath("/assets/secreteriat.jpg");
 const interventionImg = withBasePath("/assets/bloc.jpg");
+const cliniqueLogo = withBasePath("/assets/carre-rvb-csc.png");
 const serviceIcons = [HeartPulse, Activity, Stethoscope];
 
 const fadeUp = {
@@ -78,6 +79,18 @@ export default function HomePage() {
                 regroupe cardiologues et personnel paramédical autour de la prise en charge des
                 pathologies cardiovasculaires.
               </p>
+              <p className="mb-6 text-body leading-relaxed">
+                La Clinique Sainte-Clotilde fait partie du groupe Clinifutur.
+              </p>
+              <a
+                href="https://www.clinifutur.net/fr/sainte-clotilde-clinique"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Clinique Sainte-Clotilde - Groupe Clinifutur"
+              >
+                <img src={cliniqueLogo} alt="Clinique Sainte-Clotilde" className="h-10 w-auto " />
+              </a>
+              <p className="mb-6 text-body leading-relaxed" />
               <p className="mb-6 text-body leading-relaxed">
                 Les patients sont pris en charge de la consultation aux examens et aux gestes
                 interventionnels, dans une organisation structurée avec un secrétariat dédié.
