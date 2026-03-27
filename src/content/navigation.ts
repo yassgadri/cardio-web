@@ -57,7 +57,8 @@ export const stats = [
 export const companyInfo = {
   raisonSociale: "SELARL DE CARDIOLOGIE DE LA CLINIQUE SAINTE-CLOTILDE",
   capitalSocial: "154 825,92 Euros",
-  siegeSocial: "Clinique de Sainte-clotilde Sainte-Clotilde 97490 Saint-Denis",
+  siegeSocial:
+    "Clinique de Sainte-clotilde, 127 route du Bois de Nèfles, 97490 Sainte-Clotilde, Saint-Denis, La Réunion",
   RCS: "391 557 048 R.C.S. Saint Denis de La Réunion",
   SIREN: "391 557 048",
 };
