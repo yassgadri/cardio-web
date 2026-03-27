@@ -16,6 +16,8 @@ const staticRoutes = [
   "/hospitalisation",
   "/preparer-ma-visite",
   "/contact",
+  "/mentions-legales",
+  "/politique-confidentialite",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
