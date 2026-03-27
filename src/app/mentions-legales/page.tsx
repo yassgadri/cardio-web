@@ -106,13 +106,11 @@ export default function MentionsLegalesPage() {
                 <h3 className="text-lg font-semibold text-heading">4. Hébergement</h3>
                 <div className="mt-2 space-y-2">
                   <p>
-                    Le site est hébergé par <strong>Cloudflare, Inc.</strong>.
+                    Le site est hébergé par <strong>Cloudflare, Inc.</strong>, fournisseur de
+                    services de diffusion de contenu (CDN) et d'hébergement.
                   </p>
                   <p>
-                    <strong>Éditeur du service :</strong> Cloudflare, Inc.
-                  </p>
-                  <p>
-                    <strong>Siège social :</strong> 101 Townsend Street, San Francisco, CA 94107,
+                    <strong>Adresse :</strong> 101 Townsend Street, San Francisco, CA 94107,
                     États-Unis
                   </p>
                   <p>
