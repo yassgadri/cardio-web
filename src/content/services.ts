@@ -30,7 +30,7 @@ export const serviceCategories: ServiceCategory[] = [
     title: "Explorations non invasives",
     description:
       "Examens cardiologiques permettant d’évaluer le cœur sans geste invasif, afin de guider le diagnostic, le suivi et la stratégie thérapeutique.",
-    image: withBasePath("/assets/explorations-non-invasives.jpg"),
+    image: withBasePath("/assets/specialite-explorations-non-invasives.jpg"),
     procedures: [
       {
         title: "Échocardiographie Doppler transthoracique (ETT)",
@@ -88,7 +88,7 @@ export const serviceCategories: ServiceCategory[] = [
     title: "Cardiologie interventionnelle",
     description:
       "Prise en charge diagnostique et thérapeutique par techniques mini-invasives pour explorer ou traiter certaines pathologies cardiovasculaires. Le service dispose de deux salles de cathétérisme.",
-    image: withBasePath("/assets/cardiologie-interventionnelle.jpg"),
+    image: withBasePath("/assets/specialite-cardiologie-interventionnelle.jpg"),
     procedures: [
       {
         title: "Coronarographie",
@@ -125,7 +125,7 @@ export const serviceCategories: ServiceCategory[] = [
     title: "Rythmologie interventionnelle",
     description:
       "Évaluation et traitement des troubles du rythme cardiaque, des palpitations et des anomalies de conduction nécessitant un suivi spécialisé.",
-    image: withBasePath("/assets/rythmologie.jpg"),
+    image: withBasePath("/assets/specialite-rythmologie.jpg"),
     procedures: [
       {
         title: "Explorations électrophysiologiques",
