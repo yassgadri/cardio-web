@@ -106,13 +106,17 @@ export default function MentionsLegalesPage() {
                 <h3 className="text-lg font-semibold text-heading">4. Hébergement</h3>
                 <div className="mt-2 space-y-2">
                   <p>
-                    Le site est hébergé par <strong>OVHcloud</strong>.
+                    Le site est hébergé par <strong>Cloudflare, Inc.</strong>.
                   </p>
                   <p>
-                    <strong>Éditeur du service :</strong> OVH SAS
+                    <strong>Éditeur du service :</strong> Cloudflare, Inc.
                   </p>
                   <p>
-                    <strong>Siège social :</strong> 2 rue Kellermann, 59100 Roubaix, France
+                    <strong>Siège social :</strong> 101 Townsend Street, San Francisco, CA 94107,
+                    États-Unis
+                  </p>
+                  <p>
+                    <strong>Site web :</strong> https://www.cloudflare.com/
                   </p>
                 </div>
               </div>
