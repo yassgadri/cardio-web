@@ -2,6 +2,7 @@ export const dynamic = "force-static";
 
 import type { MetadataRoute } from "next";
 import { serviceCategories } from "@/content/services";
+import { doctors } from "@/content/doctors";
 import { normalizePath } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 
@@ -35,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...doctors.map((doctor) => ({
+      url: `${SITE_URL}${normalizePath(`/medecins/${doctor.slug}`)}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
   ];
 }

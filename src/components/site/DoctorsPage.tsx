@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mail, Phone, User } from "lucide-react";
+import { Mail } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageBanner from "@/components/layout/PageBanner";
 import { doctors } from "@/content/doctors";
-import { contactInfo } from "@/content/navigation";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -38,7 +37,11 @@ export default function DoctorsPage() {
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: i * 0.05 }}
               >
-                <h3 className="font-semibold text-heading text-base mb-2">{doc.name}</h3>
+                <h3 className="mb-2 text-base font-semibold text-heading">
+                  <Link href={`/medecins/${doc.slug}`} className="hover:text-primary hover:underline">
+                    {doc.name}
+                  </Link>
+                </h3>
                 <ul className="text-body text-xs space-y-1 mb-4">
                   {doc.qualifications.map((q, j) => (
                     <li key={j}>{q}</li>
