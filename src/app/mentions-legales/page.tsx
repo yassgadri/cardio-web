@@ -1,28 +1,15 @@
-import type { Metadata } from "next";
 import Layout from "@/components/layout/Layout";
 import PageBanner from "@/components/layout/PageBanner";
+import { buildPageMetadata } from "@/lib/seo";
 import { companyInfo, contactInfo } from "@/content/navigation";
 
-export const metadata: Metadata = {
-  title: "Mentions légales | SELARL de cardiologie",
+export const metadata = buildPageMetadata({
+  title: "Mentions légales",
   description:
     "Mentions légales du site de la SELARL de cardiologie : éditeur, directeur de publication, hébergeur, propriété intellectuelle, responsabilité et droit applicable.",
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: "/mentions-legales",
-  },
-  openGraph: {
-    title: "Mentions légales | SELARL de cardiologie",
-    description: "Consultez les mentions légales du site de la SELARL de cardiologie.",
-    url: "/mentions-legales",
-    siteName: "SELARL de cardiologie",
-    type: "website",
-    locale: "fr_FR",
-  },
-};
+  path: "/mentions-legales",
+  keywords: ["mentions légales", "SELARL de cardiologie", "Clinique Sainte-Clotilde"],
+});
 
 export default function MentionsLegalesPage() {
   return (

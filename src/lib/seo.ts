@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { serviceCategories } from "@/content/services";
-import { SITE_DESCRIPTION, SITE_IMAGE, SITE_LOCALE, SITE_NAME, SITE_URL } from "@/lib/site";
+import {
+  SITE_DEFAULT_TITLE,
+  SITE_DESCRIPTION,
+  SITE_IMAGE,
+  SITE_LOCALE,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
 
 const specialtyKeywords = serviceCategories.flatMap((category) => [
   category.title,
@@ -10,9 +17,11 @@ const specialtyKeywords = serviceCategories.flatMap((category) => [
 export const SITE_KEYWORDS = Array.from(
   new Set([
     SITE_NAME,
+    "service de cardiologie",
     "cardiologie",
     "cardiologue",
     "clinique Sainte-Clotilde",
+    "Clinique Sainte-Clotilde",
     "Saint-Denis",
     "La Réunion",
     "coronarographie",
@@ -23,7 +32,7 @@ export const SITE_KEYWORDS = Array.from(
   ]),
 );
 
-const DEFAULT_OG_IMAGE = "/assets/about-cardio.jpg";
+const DEFAULT_OG_IMAGE = SITE_IMAGE;
 
 export function absoluteUrl(path: string) {
   return new URL(path, SITE_URL).toString();
@@ -34,7 +43,7 @@ export function normalizePath(path: string) {
   return `${path.replace(/\/$/, "")}/`;
 }
 
-function pickKeywords(keywords: string[], max = 10) {
+function pickKeywords(keywords: string[], max = 12) {
   return Array.from(new Set(keywords.map((item) => item.trim()).filter(Boolean))).slice(0, max);
 }
 
@@ -50,18 +59,22 @@ export function buildPageMetadata({
   keywords?: string[];
 }): Metadata {
   const canonical = normalizePath(path);
-  const fullTitle = title === SITE_NAME ? SITE_NAME : `${title} | ${SITE_NAME}`;
+  const fullTitle = title === SITE_NAME ? SITE_DEFAULT_TITLE : `${title} | ${SITE_NAME}`;
   const ogImage = DEFAULT_OG_IMAGE;
-  const mergedKeywords = pickKeywords(keywords);
+  const mergedKeywords = pickKeywords([SITE_NAME, ...keywords]);
 
   return {
     title,
     description,
     keywords: mergedKeywords.length ? mergedKeywords : undefined,
+    category: "healthcare",
     alternates: {
       canonical,
     },
-    category: "healthcare",
+    robots: {
+      index: true,
+      follow: true,
+    },
     openGraph: {
       type: "website",
       url: absoluteUrl(canonical),

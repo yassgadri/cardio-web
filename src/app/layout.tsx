@@ -3,10 +3,12 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { contactInfo } from "@/content/navigation";
+import { SITE_KEYWORDS, absoluteUrl, buildWebPageJsonLd } from "@/lib/seo";
 import {
   SITE_ADDRESS,
   SITE_CITY,
   SITE_COUNTRY,
+  SITE_DEFAULT_TITLE,
   SITE_DESCRIPTION,
   SITE_IMAGE,
   SITE_LOCALE,
@@ -16,16 +18,16 @@ import {
   SITE_REGION,
   SITE_URL,
 } from "@/lib/site";
-import { absoluteUrl, buildWebPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: SITE_NAME,
+    default: SITE_DEFAULT_TITLE,
     template: `%s | ${SITE_NAME}`,
   },
   applicationName: SITE_NAME,
   description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
   referrer: "origin-when-cross-origin",
   creator: SITE_NAME,
   publisher: SITE_NAME,
@@ -53,7 +55,7 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: SITE_NAME,
+    title: SITE_DEFAULT_TITLE,
     description: SITE_DESCRIPTION,
     locale: SITE_LOCALE,
     images: [
@@ -67,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_NAME,
+    title: SITE_DEFAULT_TITLE,
     description: SITE_DESCRIPTION,
     images: [absoluteUrl(SITE_IMAGE)],
   },
@@ -123,7 +125,7 @@ const medicalClinicJsonLd = {
       description: SITE_DESCRIPTION,
     },
     buildWebPageJsonLd({
-      name: SITE_NAME,
+      name: SITE_DEFAULT_TITLE,
       description: SITE_DESCRIPTION,
       path: "/",
     }),

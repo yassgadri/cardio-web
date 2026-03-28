@@ -1,29 +1,15 @@
-import type { Metadata } from "next";
 import Layout from "@/components/layout/Layout";
 import PageBanner from "@/components/layout/PageBanner";
+import { buildPageMetadata } from "@/lib/seo";
 import { companyInfo, contactInfo } from "@/content/navigation";
 
-export const metadata: Metadata = {
-  title: "Politique de confidentialité | SELARL de cardiologie",
+export const metadata = buildPageMetadata({
+  title: "Politique de confidentialité",
   description:
     "Politique de confidentialité du site de la SELARL de cardiologie : données collectées, finalités, base légale, durée de conservation, cookies et droits RGPD.",
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: "/politique-confidentialite",
-  },
-  openGraph: {
-    title: "Politique de confidentialité | SELARL de cardiologie",
-    description:
-      "Consultez la politique de confidentialité et les informations RGPD du site de la SELARL de cardiologie.",
-    url: "/politique-confidentialite",
-    siteName: "SELARL de cardiologie",
-    type: "website",
-    locale: "fr_FR",
-  },
-};
+  path: "/politique-confidentialite",
+  keywords: ["politique de confidentialité", "SELARL de cardiologie", "Clinique Sainte-Clotilde"],
+});
 
 export default function PolitiqueConfidentialitePage() {
   return (
