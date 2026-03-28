@@ -26,6 +26,7 @@ export const navigation: NavItem[] = [
       { label: "Accès", href: "/contact" },
     ],
   },
+  { label: "Publications", href: "/publications" },
 ];
 
 export const contactInfo = {

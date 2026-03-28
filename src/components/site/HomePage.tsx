@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, HeartPulse, Activity, Stethoscope } from "lucide-react";
+import { ArrowRight, HeartPulse, Activity, Stethoscope, Microscope } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import { serviceCategories } from "@/content/services";
 import { withBasePath } from "@/lib/paths";
+import { featuredPublication } from "@/content/publications";
 
 const heroImg = withBasePath("/assets/hero.jpg");
 const serviceImg = withBasePath("/assets/salle-de-soins.png");
@@ -135,6 +136,59 @@ export default function HomePage() {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="section-padding bg-section">
+        <div className="container-main">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+            <motion.div className="medical-card" {...fadeUp}>
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <Microscope className="h-6 w-6 text-primary" />
+              </div>
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+                Activité scientifique
+              </p>
+              <h2 className="mt-3 text-2xl md:text-3xl text-heading">
+                Une publication scientifique mise en avant
+              </h2>
+              <p className="mt-5 text-body leading-relaxed">
+                Le service participe également à la recherche clinique. Retrouvez une publication
+                scientifique réalisée autour de l’évaluation fonctionnelle des lésions coronaires.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-4">
+                <Link
+                  href="/publications"
+                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                >
+                  Voir la publication <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.article
+              className="medical-card"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.1 }}
+            >
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+                Publication 2025
+              </p>
+              <h3 className="mt-3 text-xl font-semibold text-heading">
+                {featuredPublication.title}
+              </h3>
+              <p className="mt-3 text-sm text-body">
+                {featuredPublication.journal} • DOI : {featuredPublication.doi}
+              </p>
+              <p className="mt-5 text-body leading-relaxed">{featuredPublication.summary}</p>
+              <p className="mt-4 text-sm text-body leading-relaxed">
+                Résumé pour les patients : cette étude illustre une démarche d’évaluation précise
+                des lésions coronaires et l’implication du service dans une pratique fondée sur les
+                données cliniques.
+              </p>
+            </motion.article>
           </div>
         </div>
       </section>

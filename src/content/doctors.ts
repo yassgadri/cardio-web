@@ -4,6 +4,7 @@ export interface Doctor {
   qualifications: string[];
   email: string;
   shortDescription: string;
+  publications?: string[];
 }
 
 export const doctors: Doctor[] = [
@@ -14,6 +15,7 @@ export const doctors: Doctor[] = [
     email: "christophe.pouillot@clinifutur.net",
     shortDescription:
       "Le Dr Christophe Pouillot exerce au sein du service de cardiologie de la Clinique Sainte-Clotilde et participe à la prise en charge des patients en cardiologie interventionnelle.",
+    publications: ["comparative-analysis-vffr-ffr-wire-reunion-registry"],
   },
   {
     slug: "geoffray-rambaud",
@@ -22,6 +24,7 @@ export const doctors: Doctor[] = [
     email: "rambaud.geo@gmail.com",
     shortDescription:
       "Le Dr Geoffray Rambaud exerce au sein du service de cardiologie de la Clinique Sainte-Clotilde et intervient en consultation, exploration non invasive et cardiologie interventionnelle.",
+    publications: ["comparative-analysis-vffr-ffr-wire-reunion-registry"],
   },
   {
     slug: "christophe-geyer",
@@ -38,6 +41,7 @@ export const doctors: Doctor[] = [
     email: "kbougrini@yahoo.fr",
     shortDescription:
       "Le Dr Karim Bougrini exerce au sein du service de cardiologie de la Clinique Sainte-Clotilde et intervient en consultation, exploration non invasive et cardiologie interventionnelle.",
+    publications: ["comparative-analysis-vffr-ffr-wire-reunion-registry"],
   },
   {
     slug: "richard-vi-fane",
@@ -46,6 +50,7 @@ export const doctors: Doctor[] = [
     email: "richard.vifane@clinifutur.net",
     shortDescription:
       "Le Dr Richard Vi-Fane exerce au sein du service de cardiologie de la Clinique Sainte-Clotilde et intervient en consultation, exploration non invasive et cardiologie interventionnelle.",
+    publications: ["comparative-analysis-vffr-ffr-wire-reunion-registry"],
   },
   {
     slug: "jens-glasenapp",
@@ -54,6 +59,7 @@ export const doctors: Doctor[] = [
     email: "jens.glasenapp@gmx.fr",
     shortDescription:
       "Le Dr Jens Glasenapp exerce au sein du service de cardiologie de la Clinique Sainte-Clotilde et intervient en consultation, exploration non invasive et cardiologie interventionnelle.",
+    publications: ["comparative-analysis-vffr-ffr-wire-reunion-registry"],
   },
   {
     slug: "yassine-gadri",
@@ -62,6 +68,7 @@ export const doctors: Doctor[] = [
     email: "yassine.gadri@clinifutur.net",
     shortDescription:
       "Le Dr Yassine Gadri exerce au sein du service de cardiologie de la Clinique Sainte-Clotilde et intervient en consultation, exploration non invasive et cardiologie interventionnelle.",
+    publications: ["comparative-analysis-vffr-ffr-wire-reunion-registry"],
   },
   {
     slug: "david-huchette",
@@ -70,6 +77,7 @@ export const doctors: Doctor[] = [
     email: "david_huchette@hotmail.com",
     shortDescription:
       "Le Dr David Huchette exerce au sein du service de cardiologie de la Clinique Sainte-Clotilde et intervient en consultation, exploration non invasive et rythmologie interventionnelle.",
+    publications: ["comparative-analysis-vffr-ffr-wire-reunion-registry"],
   },
 ];
 

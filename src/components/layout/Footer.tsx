@@ -86,6 +86,14 @@ const Footer = () => (
                 Le service
               </Link>
             </li>
+            <li>
+              <Link
+                href="/publications"
+                className="opacity-70 transition-opacity hover:opacity-100"
+              >
+                Publications
+              </Link>
+            </li>
           </ul>
         </div>
 

@@ -6,6 +6,7 @@ import { Mail, ChevronLeft } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageBanner from "@/components/layout/PageBanner";
 import type { Doctor } from "@/content/doctors";
+import { publications } from "@/content/publications";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -15,6 +16,10 @@ const fadeUp = {
 };
 
 export default function DoctorProfilePage({ doctor }: { doctor: Doctor }) {
+  const doctorPublications = publications.filter((publication) =>
+    doctor.publications?.includes(publication.slug),
+  );
+
   return (
     <Layout>
       <PageBanner
@@ -68,6 +73,21 @@ export default function DoctorProfilePage({ doctor }: { doctor: Doctor }) {
                 >
                   <Mail className="h-4 w-4" /> Envoyer un mail{/*doctor.email*/}
                 </a>
+
+                {doctorPublications.length ? (
+                  <div className="mt-8 border-t border-border pt-6">
+                    <h2 className="text-lg font-semibold text-heading">Publications</h2>
+                    <ul className="mt-4 space-y-3 text-sm text-body">
+                      {doctorPublications.map((publication) => (
+                        <li key={publication.slug}>
+                          <Link href="/publications" className="text-primary hover:underline">
+                            {publication.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
               </aside>
             </div>
           </motion.div>

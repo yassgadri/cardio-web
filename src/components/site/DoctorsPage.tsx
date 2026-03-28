@@ -38,7 +38,10 @@ export default function DoctorsPage() {
                 transition={{ ...fadeUp.transition, delay: i * 0.05 }}
               >
                 <h3 className="mb-2 text-base font-semibold text-heading">
-                  <Link href={`/medecins/${doc.slug}`} className="hover:text-primary hover:underline">
+                  <Link
+                    href={`/medecins/${doc.slug}`}
+                    className="hover:text-primary hover:underline"
+                  >
                     {doc.name}
                   </Link>
                 </h3>
