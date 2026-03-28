@@ -80,6 +80,14 @@ const Footer = () => (
             </li>
             <li>
               <Link
+                href="/publications"
+                className="opacity-70 transition-opacity hover:opacity-100"
+              >
+                Publications
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/qui-sommes-nous"
                 className="opacity-70 transition-opacity hover:opacity-100"
               >
