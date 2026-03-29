@@ -16,6 +16,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  env: {
+    NEXT_PUBLIC_CF_PAGES_BRANCH: process.env.CF_PAGES_BRANCH || "",
+  },
 };
 
 export default nextConfig;

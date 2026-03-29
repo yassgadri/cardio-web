@@ -8,6 +8,8 @@ import { navigation, type NavItem } from "@/content/navigation";
 import { withBasePath } from "@/lib/paths";
 import { cn } from "@/lib/utils";
 
+const isReview = process.env.NEXT_PUBLIC_CF_PAGES_BRANCH === "staging";
+
 const logoImg = withBasePath("/assets/logo-cardio.png");
 
 function isActiveLink(pathname: string, href: string) {
@@ -25,7 +27,28 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur">
+    <header className="relative sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur">
+      {isReview && (
+        <div
+          style={{
+            position: "absolute",
+            top: "8px",
+            left: "16px",
+            zIndex: 1000,
+            background: "rgba(185,28,28,0.9)",
+            backdropFilter: "blur(4px)",
+            color: "#fff",
+            padding: "4px 10px",
+            fontSize: "12px",
+            fontWeight: 700,
+            borderRadius: "6px",
+            letterSpacing: "0.03em",
+            pointerEvents: "none", // important → ne bloque pas les clics du menu
+          }}
+        >
+          VERSION REVIEW
+        </div>
+      )}
       <div className="container-main flex h-20 items-center justify-between gap-4 lg:gap-8">
         <Link href="/" className="flex min-w-0 items-center gap-3">
           <img src={logoImg} alt="Service de cardiologie" className="h-10 w-auto sm:h-12" />
