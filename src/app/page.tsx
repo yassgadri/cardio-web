@@ -8,6 +8,8 @@ export const metadata = buildPageMetadata({
   path: "/",
   keywords: [
     "service de cardiologie",
+    "équipe de cardiologues",
+    "cardiologue",
     "clinique sainte-clotilde",
     "cardiologue saint-denis réunion",
     "cardiologie saint-denis réunion",
