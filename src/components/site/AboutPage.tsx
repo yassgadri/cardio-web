@@ -108,10 +108,10 @@ export default function AboutPage() {
               <SectionHeading title="Le service de cardiologie de la Clinique Sainte-Clotilde" />
 
               <p className="mt-6 text-base leading-8 text-body">
-                Depuis 1991, le service de cardiologie de la Clinique Sainte-Clotilde, fondé par le
-                Dr Christophe Pouillot, est pionnier dans le domaine de la cardiologie
-                interventionnelle sur l’île de La Réunion. Il a réalisé des premières majeures,
-                telles que la première angioplastie coronaire en 1991, le premier stent
+                Depuis 1991, le service de cardiologie de la Clinique Sainte-Clotilde, fondé par le{" "}
+                <strong>Dr Christophe Pouillot</strong>, est pionnier dans le domaine de la
+                cardiologie interventionnelle sur l’île de La Réunion. Il a réalisé des premières
+                majeures, telles que la première angioplastie coronaire en 1991, le premier stent
                 intracoronaire en 1993, ainsi que la première dilatation de valve cardiaque.
               </p>
             </motion.div>
