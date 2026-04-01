@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import DoctorProfilePage from "@/components/site/DoctorProfilePage";
 import { doctors, getDoctorBySlug } from "@/content/doctors";
-import { absoluteUrl, buildBreadcrumbJsonLd, buildPageMetadata, buildWebPageJsonLd } from "@/lib/seo";
+import {
+  absoluteUrl,
+  buildBreadcrumbJsonLd,
+  buildPageMetadata,
+  buildWebPageJsonLd,
+} from "@/lib/seo";
 
 export function generateStaticParams() {
   return doctors.map((doctor) => ({ slug: doctor.slug }));
@@ -27,10 +32,19 @@ export async function generateMetadata({
   }
 
   return buildPageMetadata({
-    title: `${doctor.name} - Cardiologie`,
-    description: `${doctor.name}, cardiologue au sein du service de cardiologie de la Clinique Sainte-Clotilde à Saint-Denis de La Réunion.`,
+    title: `${doctor.name} - Cardiologue à Saint-Denis`,
+    description: `${doctor.name}, cardiologue à Saint-Denis (La Réunion), consulte au sein du service de cardiologie de la Clinique Sainte-Clotilde.`,
     path: `/medecins/${doctor.slug}`,
-    keywords: [doctor.name, ...doctor.qualifications, "cardiologue Sainte-Clotilde", "Saint-Denis", "La Réunion"],
+    keywords: [
+      doctor.name,
+      ...doctor.qualifications,
+      "cardiologue",
+      "cardiologue Sainte-Clotilde",
+      "cardiologue Saint-Denis",
+      "cardiologue La Réunion",
+      "Saint-Denis",
+      "La Réunion",
+    ],
   });
 }
 
@@ -82,7 +96,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   return (
     <>
       <DoctorProfilePage doctor={doctor} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   );
 }
