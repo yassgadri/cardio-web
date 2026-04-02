@@ -11,7 +11,6 @@ const staticRoutes = [
   "/qui-sommes-nous",
   "/medecins",
   "/consultation",
-  "/examens",
   "/specialites",
   "/parcours-patient",
   "/hospitalisation",
