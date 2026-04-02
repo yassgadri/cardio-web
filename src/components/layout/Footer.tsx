@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, Printer, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { SiFacebook as Facebook, SiYoutube as Youtube } from "react-icons/si";
 import { LuLinkedin as Linkedin } from "react-icons/lu";
 import { contactInfo, socialLinks } from "@/content/navigation";
@@ -151,7 +151,7 @@ const Footer = () => (
               </a>
             </li>
             <li className="flex items-center gap-2 opacity-70 transition-opacity hover:opacity-100">
-              <Printer className="h-4 w-4 shrink-0" /> {contactInfo.fax}
+              Fax {contactInfo.fax}
             </li>
             <li>
               <a
@@ -159,7 +159,7 @@ const Footer = () => (
                 className="flex items-center gap-2 opacity-70 transition-opacity hover:opacity-100"
               >
                 <Mail className="h-4 w-4 shrink-0" />
-                Envoyer un Email
+                {contactInfo.email}
               </a>
             </li>
           </ul>
