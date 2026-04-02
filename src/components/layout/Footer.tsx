@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, Printer, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Printer } from "lucide-react";
 import { SiFacebook as Facebook, SiYoutube as Youtube } from "react-icons/si";
 import { LuLinkedin as Linkedin } from "react-icons/lu";
 import { contactInfo, socialLinks } from "@/content/navigation";
@@ -145,21 +145,34 @@ const Footer = () => (
               <a
                 href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
                 className="flex items-center gap-2 opacity-70 transition-opacity hover:opacity-100"
+                aria-label={`Téléphone : ${contactInfo.phone}`}
               >
                 <Phone className="h-4 w-4 shrink-0" />
-                {contactInfo.phone}
+                <span>
+                  <span className="sr-only">Téléphone : </span>
+                  {contactInfo.phone}
+                </span>
               </a>
             </li>
-            <li className="flex items-center gap-2 opacity-70 transition-opacity hover:opacity-100">
-              <Printer className="h-4 w-4 shrink-0" /> {contactInfo.fax}
+
+            <li className="flex items-start gap-2 opacity-70">
+              <Printer className="mt-0.5 h-4 w-4 shrink-0" />
+              <span>
+                <span className="font-medium">Fax :</span> {contactInfo.fax}
+                <br />
+                <span className="text-xs opacity-80">
+                  Transmission de documents médicaux uniquement
+                </span>
+              </span>
             </li>
+
             <li>
               <a
                 href={`mailto:${contactInfo.email}`}
                 className="flex items-center gap-2 opacity-70 transition-opacity hover:opacity-100"
               >
                 <Mail className="h-4 w-4 shrink-0" />
-                Envoyer un Email
+                {contactInfo.email}
               </a>
             </li>
           </ul>
