@@ -81,16 +81,23 @@ export default function HomePage() {
                 pathologies cardiovasculaires.
               </p>
               <p className="mb-6 text-body leading-relaxed">
-                La Clinique Sainte-Clotilde fait partie du groupe Clinifutur.
+                La Clinique Sainte-Clotilde fait partie du groupe{" "}
+                <a
+                  href="https://www.clinifutur.net/fr/sainte-clotilde-clinique"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Clinique Sainte-Clotilde - Groupe Clinifutur"
+                  className="text-blue-600 underline hover:text-blue-800 hover:text-primary"
+                >
+                  Clinifutur
+                </a>
+                .
               </p>
-              <a
-                href="https://www.clinifutur.net/fr/sainte-clotilde-clinique"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Clinique Sainte-Clotilde - Groupe Clinifutur"
-              >
-                <img src={cliniqueLogo} alt="Clinique Sainte-Clotilde" className="h-10 w-auto " />
-              </a>
+              <img
+                src={cliniqueLogo}
+                alt="Clinique Sainte-Clotilde"
+                className="h-12 lg:h-12 max-h-12 w-auto"
+              />
               <p className="mb-6 text-body leading-relaxed" />
               <p className="mb-6 text-body leading-relaxed">
                 Les patients sont pris en charge de la consultation aux examens et aux gestes
