@@ -127,15 +127,6 @@ export default function HospitalisationPage() {
               ))}
             </div>
           </motion.div>
-
-          <motion.div className="mt-8 text-center" {...fadeUp}>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Service de cardiologie — Contactez-nous
-            </Link>
-          </motion.div>
         </div>
       </section>
     </Layout>

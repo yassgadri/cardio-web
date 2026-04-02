@@ -61,7 +61,7 @@ export default function ConsultationPage() {
                 </a>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="flex items-center gap-2 text-body hover:text-primary"
+                  className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline"
                 >
                   <Mail className="h-4 w-4" /> {contactInfo.email}
                 </a>
@@ -109,15 +109,6 @@ export default function ConsultationPage() {
                 </p>
               </div>
             </div>
-          </motion.div>
-
-          <motion.div className="mt-8 text-center" {...fadeUp}>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Consultation de cardiologie — Contactez-nous
-            </Link>
           </motion.div>
         </div>
       </section>
