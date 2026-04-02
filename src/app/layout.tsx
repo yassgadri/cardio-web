@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import { contactInfo } from "@/content/navigation";
 import { SITE_KEYWORDS, absoluteUrl, buildWebPageJsonLd } from "@/lib/seo";
 import {
+  normalizePhoneNumber,
   SITE_ADDRESS,
   SITE_CITY,
   SITE_COUNTRY,
@@ -92,8 +93,8 @@ const medicalClinicJsonLd = {
       name: SITE_NAME,
       url: SITE_URL,
       description: SITE_DESCRIPTION,
-      telephone: SITE_PHONE,
-      faxNumber: contactInfo.fax,
+      telephone: normalizePhoneNumber(SITE_PHONE),
+      faxNumber: normalizePhoneNumber(contactInfo.fax),
       email: contactInfo.email,
       medicalSpecialty: ["Cardiology", "InterventionalCardiology"],
       areaServed: [SITE_CITY, SITE_REGION],
@@ -110,7 +111,7 @@ const medicalClinicJsonLd = {
         {
           "@type": "ContactPoint",
           contactType: "customer service",
-          telephone: SITE_PHONE,
+          telephone: normalizePhoneNumber(SITE_PHONE),
           email: contactInfo.email,
           areaServed: "RE",
           availableLanguage: ["fr"],
@@ -118,7 +119,7 @@ const medicalClinicJsonLd = {
         {
           "@type": "ContactPoint",
           contactType: "fax",
-          faxNumber: contactInfo.fax,
+          faxNumber: normalizePhoneNumber(contactInfo.fax),
           areaServed: "RE",
           availableLanguage: ["fr"],
         },

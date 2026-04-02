@@ -12,3 +12,5 @@ export const SITE_PHONE = "+262262482122";
 export const SITE_ADDRESS = "127 route du Bois de Nèfles";
 export const SITE_POSTAL_CODE = "97490";
 export const SITE_IMAGE = "/assets/hero.jpg";
+
+export const normalizePhoneNumber = (n: string): string => n.replace(/\s+/g, "");
