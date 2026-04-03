@@ -1,5 +1,6 @@
 import HomePage from "@/components/site/HomePage";
-import { buildPageMetadata, buildWebPageJsonLd } from "@/lib/seo";
+import { homeFaq } from "@/content/seo-content";
+import { buildFaqJsonLd, buildPageMetadata, buildWebPageJsonLd } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Service de cardiologie à Saint-Denis de La Réunion - Clinique Sainte-Clotilde",
@@ -13,6 +14,8 @@ export const metadata = buildPageMetadata({
     "clinique sainte-clotilde",
     "cardiologue saint-denis réunion",
     "cardiologie saint-denis réunion",
+    "consultation cardiologue saint-denis",
+    "rythmologie réunion",
   ],
 });
 
@@ -24,6 +27,7 @@ const jsonLd = {
       description: metadata.description as string,
       path: "/",
     }),
+    buildFaqJsonLd(homeFaq),
   ],
 };
 

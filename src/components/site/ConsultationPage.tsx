@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Phone, Mail, FileText } from "lucide-react";
+import { Phone, Mail, FileText, ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageBanner from "@/components/layout/PageBanner";
+import SectionHeading from "@/components/SectionHeading";
 import { contactInfo } from "@/content/navigation";
 
 const fadeUp = {
@@ -13,6 +14,13 @@ const fadeUp = {
   viewport: { once: true },
   transition: { duration: 0.5 },
 };
+
+const consultationSteps = [
+  "Prise de contact avec le secrétariat pour préciser le motif et les modalités pratiques.",
+  "Préparation du rendez-vous avec les documents utiles : ordonnance, courriers, examens et traitement en cours.",
+  "Consultation cardiologique permettant d’évaluer la situation et d’orienter la suite du parcours.",
+  "Programmation éventuelle d’examens complémentaires ou d’un suivi spécialisé selon l’avis du cardiologue.",
+];
 
 export default function ConsultationPage() {
   return (
@@ -33,11 +41,10 @@ export default function ConsultationPage() {
             </p>
             <h2 className="mb-4 text-2xl md:text-3xl">Consultation cardiologique</h2>
             <div className="mb-6 h-1 w-16 rounded-full bg-primary" />
-            <p className="mb-8 text-body leading-relaxed">
-              La consultation permet une première évaluation cardiologique, un suivi spécialisé ou
-              l’interprétation d’examens déjà réalisés. Elle permet également d’orienter la prise en
-              charge, de programmer si besoin des examens complémentaires et d’expliquer la suite du
-              parcours.
+            <p className="mb-6 text-body leading-relaxed">
+              La consultation permet une première évaluation, un suivi spécialisé ou l’analyse
+              d’examens déjà réalisés. Elle sert à préciser la situation, orienter la prise en
+              charge et programmer si besoin des examens complémentaires.
             </p>
             <p className="mb-8 text-body leading-relaxed">
               Les consultations se déroulent dans le bâtiment B, au 2ᵉ étage.
@@ -49,8 +56,7 @@ export default function ConsultationPage() {
               <h3 className="mb-4 text-lg font-semibold">Prendre rendez-vous</h3>
               <p className="mb-4 text-body text-sm leading-relaxed">
                 Pour toute demande de consultation, merci de contacter le secrétariat du service.
-                L’équipe vous indiquera les modalités pratiques selon votre situation et le type de
-                prise en charge attendu.
+                L’équipe vous indiquera les modalités pratiques selon votre situation.
               </p>
               <div className="space-y-3 text-sm">
                 <a
@@ -73,43 +79,62 @@ export default function ConsultationPage() {
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.1 }}
             >
-              <h3 className="mb-4 text-lg font-semibold">Le jour de la consultation</h3>
+              <h3 className="mb-4 text-lg font-semibold">Le jour du rendez-vous</h3>
               <div className="space-y-3 text-sm text-body">
                 <p>
-                  Merci de venir avec vos ordonnances, traitements en cours et examens
-                  cardiologiques antérieurs si vous en disposez.
+                  Merci de vous présenter quelques minutes avant l’horaire prévu et d’apporter les
+                  documents médicaux utiles à l’évaluation.
                 </p>
-                <p>
-                  Selon votre dossier, un ECG ou d’autres examens peuvent être réalisés ou
-                  programmés à l’issue de la consultation.
-                </p>
-                <p>
-                  En cas d’empêchement, il est recommandé de prévenir le secrétariat dès que
-                  possible.
-                </p>
+                <div className="flex items-start gap-3 rounded-xl bg-section p-4">
+                  <FileText className="mt-0.5 h-5 w-5 text-primary" />
+                  <p>
+                    Courriers médicaux, examens antérieurs, liste des traitements en cours et
+                    documents administratifs peuvent être demandés selon votre situation.
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
 
-          <motion.div
-            className="medical-card mt-6"
-            {...fadeUp}
-            transition={{ ...fadeUp.transition, delay: 0.15 }}
-          >
-            <div className="flex items-start gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <FileText className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <h3 className="mb-2 text-lg font-semibold">À prévoir</h3>
-                <p className="text-sm text-body leading-relaxed">
-                  Pensez à apporter une pièce d’identité, vos documents de prise en charge si
-                  besoin, ainsi que vos comptes rendus, ECG, échographies ou bilans récents afin de
-                  faciliter l’évaluation médicale.
+      <section className="section-padding bg-section">
+        <div className="container-main max-w-5xl">
+          <SectionHeading
+            overline="Parcours"
+            title="Déroulement d'une consultation de cardiologie"
+            centered={false}
+          />
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {consultationSteps.map((step, index) => (
+              <motion.div
+                key={step}
+                className="medical-card"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: index * 0.05 }}
+              >
+                <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+                  Étape {index + 1}
                 </p>
-              </div>
-            </div>
-          </motion.div>
+                <p className="mt-3 text-body leading-relaxed">{step}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-4">
+            <Link
+              href="/preparer-ma-visite"
+              className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-background"
+            >
+              Préparer ma visite <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
+            >
+              Voir les contacts utiles
+            </Link>
+          </div>
         </div>
       </section>
     </Layout>

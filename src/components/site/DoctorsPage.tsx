@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mail } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageBanner from "@/components/layout/PageBanner";
 import { doctors } from "@/content/doctors";
@@ -25,9 +25,13 @@ export default function DoctorsPage() {
         <div className="container-main">
           <div className="text-center mb-12">
             <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-2">
-              Service de cardiologie de la clinique Sainte Clotilde
+              Équipe médicale
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl">Nos cardiologues</h2>
+            <p className="mx-auto mt-4 max-w-3xl text-body leading-relaxed">
+              Cette page permet de découvrir les cardiologues du service, leurs activités au sein
+              de l’équipe et leurs profils individuels.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {doctors.map((doc, i) => (
@@ -47,9 +51,15 @@ export default function DoctorsPage() {
                     <li key={j}>{q}</li>
                   ))}
                 </ul>
+                <Link
+                  href={`/medecins/${doc.slug}`}
+                  className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline"
+                >
+                  Voir le profil <ArrowRight className="h-4 w-4" />
+                </Link>
                 <a
                   href={`mailto:${doc.email}`}
-                  className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline"
+                  className="mt-3 inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline"
                 >
                   <Mail className="h-4 w-4" /> Envoyer un mail
                 </a>

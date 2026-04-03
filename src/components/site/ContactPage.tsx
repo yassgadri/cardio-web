@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Phone, Mail, Printer, MapPin } from "lucide-react";
+import { Phone, Mail, Printer, MapPin, ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageBanner from "@/components/layout/PageBanner";
+import SectionHeading from "@/components/SectionHeading";
 import { contactInfo } from "@/content/navigation";
 
 const fadeUp = {
@@ -26,10 +28,10 @@ export default function ContactPage() {
             <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
               Entrer en contact
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl">Nous joindre simplement</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl">Coordonnées du service</h2>
             <p className="mx-auto mt-3 max-w-2xl text-body leading-relaxed">
-              Pour une prise de rendez-vous, une information sur le service ou une question liée à
-              l’hospitalisation, vous pouvez contacter le secrétariat du service de cardiologie.
+              Cette page rassemble les coordonnées utiles pour une consultation, une question sur
+              l’hospitalisation ou une demande adressée au secrétariat du service.
             </p>
           </motion.div>
 
@@ -136,6 +138,62 @@ export default function ContactPage() {
               >
                 {contactInfo.hospitalisationEmail}
               </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-section">
+        <div className="container-main max-w-5xl">
+          <SectionHeading
+            overline="Liens utiles"
+            title="Préparer votre venue et votre prise de contact"
+            centered={false}
+          />
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <motion.div className="medical-card" {...fadeUp}>
+              <h3 className="text-lg font-semibold">Consultation</h3>
+              <p className="mt-3 text-body leading-relaxed">
+                Retrouvez les informations utiles avant votre rendez-vous de cardiologie.
+              </p>
+              <Link
+                href="/consultation"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary"
+              >
+                Voir la page <ArrowRight className="h-4 w-4" />
+              </Link>
+            </motion.div>
+            <motion.div
+              className="medical-card"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.08 }}
+            >
+              <h3 className="text-lg font-semibold">Préparer ma visite</h3>
+              <p className="mt-3 text-body leading-relaxed">
+                Accédez aux conseils pratiques pour venir au service dans de bonnes conditions.
+              </p>
+              <Link
+                href="/preparer-ma-visite"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary"
+              >
+                Voir la page <ArrowRight className="h-4 w-4" />
+              </Link>
+            </motion.div>
+            <motion.div
+              className="medical-card"
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: 0.16 }}
+            >
+              <h3 className="text-lg font-semibold">Équipe médicale</h3>
+              <p className="mt-3 text-body leading-relaxed">
+                Consulter les profils des cardiologues du service et leurs domaines d’activité.
+              </p>
+              <Link
+                href="/medecins"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary"
+              >
+                Voir les médecins <ArrowRight className="h-4 w-4" />
+              </Link>
             </motion.div>
           </div>
         </div>

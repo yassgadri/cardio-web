@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { contactInfo } from "@/content/navigation";
+import { contactInfo, socialLinks } from "@/content/navigation";
 import { SITE_KEYWORDS, absoluteUrl, buildWebPageJsonLd } from "@/lib/seo";
 import {
   normalizePhoneNumber,
@@ -99,6 +99,7 @@ const medicalClinicJsonLd = {
       medicalSpecialty: ["Cardiology", "InterventionalCardiology"],
       areaServed: [SITE_CITY, SITE_REGION],
       image: absoluteUrl(SITE_IMAGE),
+      sameAs: [socialLinks.facebook, socialLinks.youtube, socialLinks.linkedin],
       address: {
         "@type": "PostalAddress",
         streetAddress: SITE_ADDRESS,
@@ -107,6 +108,7 @@ const medicalClinicJsonLd = {
         addressRegion: SITE_REGION,
         addressCountry: SITE_COUNTRY,
       },
+      hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${SITE_NAME}, ${SITE_ADDRESS}, ${SITE_CITY}`)}`,
       contactPoint: [
         {
           "@type": "ContactPoint",

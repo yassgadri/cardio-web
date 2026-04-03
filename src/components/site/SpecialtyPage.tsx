@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
 import PageBanner from "@/components/layout/PageBanner";
+import { specialtySeoContent } from "@/content/seo-content";
 import { serviceCategories } from "@/content/services";
 
 const fadeUp = {
@@ -27,6 +28,8 @@ export default function SpecialtyPage({ slug }: { slug: string }) {
     );
   }
 
+  const seoContent = specialtySeoContent[slug];
+
   return (
     <Layout>
       <PageBanner
@@ -39,9 +42,7 @@ export default function SpecialtyPage({ slug }: { slug: string }) {
       />
       <section className="section-padding">
         <div className="container-main max-w-6xl">
-          {/* HEADER: texte + image */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
-            {/* TEXTE */}
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 mb-12">
             <motion.div {...fadeUp}>
               <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
                 Spécialité
@@ -49,19 +50,53 @@ export default function SpecialtyPage({ slug }: { slug: string }) {
               <h2 className="text-2xl md:text-3xl lg:text-4xl">{category.title}</h2>
               <div className="mt-4 h-1 w-16 rounded-full bg-primary" />
               <p className="mt-6 text-body leading-relaxed">{category.description}</p>
+              {seoContent ? <p className="mt-4 text-body leading-relaxed">{seoContent.intro}</p> : null}
             </motion.div>
 
-            {/* IMAGE */}
             <motion.div className="w-full h-full" {...fadeUp}>
               <img
                 src={category.image}
                 alt={category.title}
-                className="w-full h-[250px] md:h-[300px] object-cover rounded-2xl shadow-md"
+                className="h-[250px] w-full rounded-2xl object-cover shadow-md md:h-[300px]"
               />
             </motion.div>
           </div>
 
-          {/* LISTE DES PROCEDURES */}
+          {seoContent ? (
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr] mb-12">
+              <motion.div className="medical-card" {...fadeUp}>
+                <h3 className="text-xl font-semibold">{seoContent.whenToConsultTitle}</h3>
+                <ul className="mt-4 space-y-3 text-body leading-relaxed">
+                  {seoContent.whenToConsult.map((item) => (
+                    <li key={item}>• {item}</li>
+                  ))}
+                </ul>
+              </motion.div>
+              <motion.div
+                className="medical-card"
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.08 }}
+              >
+                <h3 className="text-xl font-semibold">Prise en charge</h3>
+                <p className="mt-4 text-body leading-relaxed">{seoContent.localCareText}</p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link
+                    href="/consultation"
+                    className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
+                  >
+                    Prendre rendez-vous
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground"
+                  >
+                    Contacter le service
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+          ) : null}
+
           <div className="space-y-12">
             {category.procedures.map((proc, i) => (
               <motion.div

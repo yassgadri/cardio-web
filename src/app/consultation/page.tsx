@@ -1,19 +1,24 @@
 import ConsultationPage from "@/components/site/ConsultationPage";
-import { buildBreadcrumbJsonLd, buildPageMetadata, buildWebPageJsonLd } from "@/lib/seo";
+import { consultationFaq } from "@/content/seo-content";
+import { buildBreadcrumbJsonLd, buildFaqJsonLd, buildPageMetadata, buildWebPageJsonLd } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Consultation de cardiologie",
+  title: "Consultation de cardiologie à Saint-Denis de La Réunion",
   description:
-    "Informations utiles sur la consultation de cardiologie à la Clinique Sainte-Clotilde : rendez-vous, déroulement et orientation des patients à Saint-Denis de La Réunion.",
+    "Prendre rendez-vous pour une consultation de cardiologie à la Clinique Sainte-Clotilde à Saint-Denis de La Réunion : informations pratiques, documents utiles et parcours patient.",
   path: "/consultation",
-  keywords: ["consultation cardiologie", "rendez-vous cardiologue saint-denis"],
+  keywords: [
+    "consultation cardiologue saint-denis",
+    "consultation cardiologie réunion",
+    "rendez-vous cardiologue sainte-clotilde",
+  ],
 });
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     buildWebPageJsonLd({
-      name: "Consultation de cardiologie",
+      name: "Consultation de cardiologie à Saint-Denis de La Réunion",
       description: metadata.description as string,
       path: "/consultation",
     }),
@@ -21,6 +26,7 @@ const jsonLd = {
       { name: "Accueil", path: "/" },
       { name: "Consultation", path: "/consultation" },
     ]),
+    buildFaqJsonLd(consultationFaq),
   ],
 };
 

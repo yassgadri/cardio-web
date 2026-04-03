@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import SpecialtyPage from "@/components/site/SpecialtyPage";
+import { specialtySeoContent } from "@/content/seo-content";
 import { serviceCategories } from "@/content/services";
 import {
   absoluteUrl,
   buildBreadcrumbJsonLd,
+  buildFaqJsonLd,
   buildSpecialtyMetadata,
   buildWebPageJsonLd,
 } from "@/lib/seo";
@@ -32,8 +34,8 @@ export async function generateMetadata({
   }
 
   return buildSpecialtyMetadata({
-    title: category.title,
-    description: category.description,
+    title: `${category.title} à Saint-Denis de La Réunion`,
+    description: `${category.description} Prise en charge au sein du service de cardiologie de la Clinique Sainte-Clotilde à Saint-Denis de La Réunion.`,
     slug,
     procedures: category.procedures.map((procedure) => procedure.title),
   });
@@ -47,11 +49,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     notFound();
   }
 
+  const seoContent = specialtySeoContent[slug];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       buildWebPageJsonLd({
-        name: category.title,
+        name: `${category.title} à Saint-Denis de La Réunion`,
         description: category.description,
         path: `/${category.slug}`,
       }),
@@ -70,6 +74,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           name: "Pathologies cardiovasculaires",
         },
       },
+      ...(seoContent ? [buildFaqJsonLd(seoContent.faq)] : []),
     ],
   };
 

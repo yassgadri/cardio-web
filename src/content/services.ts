@@ -116,7 +116,7 @@ export const serviceCategories: ServiceCategory[] = [
         description:
           "Procédure percutanée utilisée dans certaines indications pour traiter un rétrécissement aortique symptomatique.",
         process:
-          "La valve est acheminée par cathéter puis implantée au niveau de la valve aortique. La procédure est réalisée après un bilon preopératoire adapté.",
+          "La valve est acheminée par cathéter puis implantée au niveau de la valve aortique. La procédure est réalisée après un bilan preopératoire adapté.",
       },
     ],
   },
